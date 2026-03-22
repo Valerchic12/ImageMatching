@@ -2646,6 +2646,7 @@ def _estimate_left_out_camera_pose(
     point_entries: List[Tuple[float, float, int]],
     reference_pose=None,
     reference_K=None,
+    subset_camera_centers=None,
 ):
     import numpy as np
 
@@ -2702,82 +2703,166 @@ def _estimate_left_out_camera_pose(
     points_3d = np.asarray([merged_points[point_id] for point_id in overlap_point_ids], dtype=np.float64).reshape(-1, 3)
     points_2d = np.asarray([observations[point_id] for point_id in overlap_point_ids], dtype=np.float64).reshape(-1, 2)
 
-    success = False
-    rvec = None
-    tvec = None
-    inliers = None
-    try:
-        success, rvec, tvec, inliers = cv2.solvePnPRansac(
-            points_3d,
-            points_2d,
-            K,
-            dist_coeffs,
-            flags=cv2.SOLVEPNP_EPNP,
-            reprojectionError=6.0,
-            confidence=0.995,
-            iterationsCount=1000,
-        )
-    except cv2.error:
-        success = False
+    # Scale RANSAC threshold proportionally to focal length.
+    # At fx=1000 use 6px; at fx=3000 use ~18px.  This prevents
+    # RANSAC from rejecting valid inliers at high focal lengths.
+    fx = float(K[0, 0])
+    ransac_threshold = max(6.0, 6.0 * fx / 1000.0)
 
-    if not success:
+    # Compute median center of subset cameras for disambiguation
+    subset_median_center = None
+    subset_max_dist = None
+    if subset_camera_centers is not None and len(subset_camera_centers) >= 2:
+        centers_arr = np.asarray(subset_camera_centers, dtype=np.float64)
+        subset_median_center = np.median(centers_arr, axis=0)
+        dists = np.linalg.norm(centers_arr - subset_median_center, axis=1)
+        subset_max_dist = float(np.max(dists))
+
+    def _refine_candidate(rvec_in, tvec_in, inliers_in):
+        """Iterative outlier rejection + LM refinement. Returns (rvec, tvec, final_mask)."""
+        rv = np.asarray(rvec_in, dtype=np.float64).reshape(3, 1)
+        tv = np.asarray(tvec_in, dtype=np.float64).reshape(3, 1)
+        mask = np.ones(len(points_3d), dtype=bool)
+        if inliers_in is not None:
+            idx = np.asarray(inliers_in, dtype=np.int32).ravel()
+            if idx.size >= 4:
+                mask[:] = False
+                mask[idx] = True
+        for _ in range(3):
+            if np.sum(mask) < 4:
+                break
+            try:
+                rv, tv = cv2.solvePnPRefineLM(
+                    points_3d[mask], points_2d[mask], K, dist_coeffs, rv.copy(), tv.copy(),
+                )
+            except cv2.error:
+                break
+            proj, _ = cv2.projectPoints(points_3d, rv, tv, K, dist_coeffs)
+            errs = np.linalg.norm(proj.reshape(-1, 2) - points_2d, axis=1)
+            ie = errs[mask]
+            med_e = float(np.median(ie))
+            mad_e = float(np.median(np.abs(ie - med_e))) * 1.4826
+            thr = max(med_e + 3.0 * mad_e, ransac_threshold * 0.5)
+            nm = errs < thr
+            if np.sum(nm) < 4:
+                break
+            if np.array_equal(nm, mask):
+                break
+            mask = nm
+        return np.asarray(rv, dtype=np.float64).reshape(3, 1), np.asarray(tv, dtype=np.float64).reshape(3, 1), mask
+
+    def _score_candidate(rv, tv, mask):
+        """Score a PnP candidate. Higher is better."""
+        R_c, _ = cv2.Rodrigues(rv)
+        # Front ratio
+        d = (R_c @ points_3d.T + tv.reshape(3, 1))[2, :]
+        fr = float(np.mean(d > 0.01))
+        if fr < 0.5:
+            return -1e9  # reject candidates with many behind-camera points
+        # Inlier ratio
+        ir = float(np.sum(mask)) / max(len(points_3d), 1)
+        # Proximity to subset cameras (if available)
+        proximity = 0.0
+        if subset_median_center is not None:
+            cc = _camera_center_from_pose(R_c, tv)
+            dist_to_median = float(np.linalg.norm(cc - subset_median_center))
+            # Penalize if camera is much farther than the farthest subset camera
+            max_reasonable = (subset_max_dist or 1.0) * 3.0
+            if dist_to_median < max_reasonable:
+                proximity = 1.0 - dist_to_median / max_reasonable
+            else:
+                proximity = -1.0
+        # Reprojection quality (mean inlier error, lower is better)
+        proj, _ = cv2.projectPoints(points_3d, rv, tv, K, dist_coeffs)
+        errs = np.linalg.norm(proj.reshape(-1, 2) - points_2d, axis=1)
+        ie = errs[mask] if np.sum(mask) > 0 else errs
+        reproj_quality = max(0.0, 1.0 - float(np.mean(ie)) / ransac_threshold)
+        return fr * 2.0 + ir + proximity * 3.0 + reproj_quality
+
+    # --- Multi-strategy PnP: collect candidates, score, pick best ---
+    candidates = []  # list of (score, rvec, tvec, mask)
+
+    pnp_strategies = [
+        ("AP3P", cv2.SOLVEPNP_AP3P),
+        ("EPNP", cv2.SOLVEPNP_EPNP),
+    ]
+    for _strategy_name, pnp_flag in pnp_strategies:
         try:
-            success, rvec, tvec = cv2.solvePnP(
-                points_3d,
-                points_2d,
-                K,
-                dist_coeffs,
-                flags=cv2.SOLVEPNP_ITERATIVE,
+            ok, rvec_c, tvec_c, inliers_c = cv2.solvePnPRansac(
+                points_3d, points_2d, K, dist_coeffs,
+                flags=pnp_flag,
+                reprojectionError=ransac_threshold,
+                confidence=0.999,
+                iterationsCount=2000,
             )
-            inliers = None
         except cv2.error:
-            success = False
+            ok = False
+        if not ok or inliers_c is None:
+            continue
+        rv, tv, m = _refine_candidate(rvec_c, tvec_c, inliers_c)
+        candidates.append((_score_candidate(rv, tv, m), rv, tv, m))
 
-    if not success:
+    # Also try IPPE for near-planar point sets
+    if len(points_3d) >= 4:
+        try:
+            ok, rvec_c, tvec_c = cv2.solvePnP(
+                points_3d, points_2d, K, dist_coeffs,
+                flags=cv2.SOLVEPNP_IPPE,
+            )
+            if ok:
+                rv, tv, m = _refine_candidate(rvec_c, tvec_c, None)
+                candidates.append((_score_candidate(rv, tv, m), rv, tv, m))
+        except cv2.error:
+            pass
+
+    # ITERATIVE fallback
+    try:
+        ok, rvec_c, tvec_c = cv2.solvePnP(
+            points_3d, points_2d, K, dist_coeffs,
+            flags=cv2.SOLVEPNP_ITERATIVE,
+        )
+        if ok:
+            rv, tv, m = _refine_candidate(rvec_c, tvec_c, None)
+            candidates.append((_score_candidate(rv, tv, m), rv, tv, m))
+    except cv2.error:
+        pass
+
+    if not candidates:
         result["reason"] = "pnp_failed"
         return result
 
-    refine_points_3d = points_3d
-    refine_points_2d = points_2d
-    if inliers is not None:
-        inlier_indices = np.asarray(inliers, dtype=np.int32).ravel()
-        if inlier_indices.size >= 4:
-            refine_points_3d = points_3d[inlier_indices]
-            refine_points_2d = points_2d[inlier_indices]
+    # Pick the best candidate by composite score
+    candidates.sort(key=lambda c: c[0], reverse=True)
+    _, rvec, tvec, current_mask = candidates[0]
 
-    try:
-        rvec, tvec = cv2.solvePnPRefineLM(
-            refine_points_3d,
-            refine_points_2d,
-            K,
-            dist_coeffs,
-            np.asarray(rvec, dtype=np.float64).reshape(3, 1),
-            np.asarray(tvec, dtype=np.float64).reshape(3, 1),
-        )
-    except cv2.error:
-        rvec = np.asarray(rvec, dtype=np.float64).reshape(3, 1)
-        tvec = np.asarray(tvec, dtype=np.float64).reshape(3, 1)
+    rvec = np.asarray(rvec, dtype=np.float64).reshape(3, 1)
+    tvec = np.asarray(tvec, dtype=np.float64).reshape(3, 1)
 
     R, _ = cv2.Rodrigues(rvec)
     projected_points, _ = cv2.projectPoints(points_3d, rvec, tvec, K, dist_coeffs)
     projected_xy = projected_points.reshape(-1, 2)
     errors = np.linalg.norm(projected_xy - points_2d, axis=1)
-    depths = (R @ points_3d.T + np.asarray(tvec, dtype=np.float64).reshape(3, 1))[2, :]
+    depths = (R @ points_3d.T + tvec.reshape(3, 1))[2, :]
     camera_center = _camera_center_from_pose(R, tvec)
 
+    final_inlier_count = int(np.sum(current_mask))
+    # Report errors only for inlier points (gives meaningful metrics)
+    inlier_errors = errors[current_mask] if np.sum(current_mask) >= 1 else errors
     result.update(
         {
             "success": True,
-            "inlier_count": int(len(refine_points_3d)),
-            "inlier_ratio": float(len(refine_points_3d) / max(len(points_3d), 1)),
-            "mean_error": float(np.mean(errors)),
-            "median_error": float(np.median(errors)),
-            "p95_error": float(np.percentile(errors, 95)) if len(errors) > 1 else float(errors[0]),
-            "max_error": float(np.max(errors)),
+            "inlier_count": final_inlier_count,
+            "inlier_ratio": float(final_inlier_count / max(len(points_3d), 1)),
+            "mean_error": float(np.mean(inlier_errors)),
+            "median_error": float(np.median(inlier_errors)),
+            "p95_error": float(np.percentile(inlier_errors, 95)) if len(inlier_errors) > 1 else float(inlier_errors[0]),
+            "max_error": float(np.max(inlier_errors)),
             "front_ratio": float(np.mean(depths > 0.01)) if len(depths) > 0 else 0.0,
             "camera_center": [float(value) for value in camera_center],
             "max_error_point_id": int(overlap_point_ids[int(np.argmax(errors))]),
             "intrinsics_source": "reference_full_camera" if reference_K is not None else "subset_scene",
+            "ransac_threshold_px": float(ransac_threshold),
+            "_R_matrix": R.tolist(),
         }
     )
 
@@ -3159,13 +3244,95 @@ def _build_scene_regression_report(
             )
             continue
 
+        # Extract subset camera centers for PnP disambiguation
+        subset_cameras = subset_calib_data.get("cameras", {}) or {}
+        _subset_centers = []
+        for _cam_id, _cam_pose in subset_cameras.items():
+            if _cam_pose is not None:
+                try:
+                    _subset_centers.append(_camera_center_from_pose(*_cam_pose))
+                except Exception:
+                    pass
+
         backfit = _estimate_left_out_camera_pose(
             subset_calib_data,
             omitted_image_name,
             point_source.get(omitted_image_name, []),
             reference_pose=full_camera_pose_by_image.get(omitted_image_name),
             reference_K=full_camera_intrinsics_by_image.get(omitted_image_name),
+            subset_camera_centers=_subset_centers if _subset_centers else None,
         )
+
+        # Procrustes alignment: transform backfit pose from subset coordinate
+        # system to full coordinate system before comparing.
+        # Without this, the comparison is meaningless because each SfM
+        # reconstruction produces an arbitrary coordinate frame.
+        if backfit.get("success"):
+            try:
+                import numpy as _np
+                # Build image_name → camera_id map for subset
+                _sub_image_map = subset_calib_data.get("images", {}) or {}
+                _sub_camid_by_img = {os.path.basename(str(v)): str(k) for k, v in _sub_image_map.items()}
+                # Collect matched camera centers
+                _src_pts = []  # subset
+                _dst_pts = []  # full
+                _src_R_list = []
+                _dst_R_list = []
+                for _img_name in subset_images:
+                    _sub_cid = _sub_camid_by_img.get(_img_name)
+                    _sub_pose = subset_cameras.get(_sub_cid) if _sub_cid else None
+                    _full_pose = full_camera_pose_by_image.get(_img_name)
+                    if _sub_pose is None or _full_pose is None:
+                        continue
+                    _src_pts.append(_camera_center_from_pose(*_sub_pose))
+                    _dst_pts.append(_camera_center_from_pose(*_full_pose))
+                    _src_R_list.append(_np.asarray(_sub_pose[0], dtype=_np.float64).reshape(3, 3))
+                    _dst_R_list.append(_np.asarray(_full_pose[0], dtype=_np.float64).reshape(3, 3))
+
+                if len(_src_pts) >= 3:
+                    _src = _np.asarray(_src_pts, dtype=_np.float64)
+                    _dst = _np.asarray(_dst_pts, dtype=_np.float64)
+                    _src_mean = _src.mean(axis=0)
+                    _dst_mean = _dst.mean(axis=0)
+                    _src_c = _src - _src_mean
+                    _dst_c = _dst - _dst_mean
+                    _s_src = _np.sqrt((_src_c ** 2).sum() / len(_src_c))
+                    _s_dst = _np.sqrt((_dst_c ** 2).sum() / len(_dst_c))
+                    if _s_src > 1e-12 and _s_dst > 1e-12:
+                        _src_n = _src_c / _s_src
+                        _dst_n = _dst_c / _s_dst
+                        _U, _S, _Vt = _np.linalg.svd(_dst_n.T @ _src_n)
+                        _d = _np.linalg.det(_U @ _Vt)
+                        _R_align = _U @ _np.diag([1.0, 1.0, _d]) @ _Vt
+                        _scale = _s_dst / _s_src
+                        _t_align = _dst_mean - _scale * (_R_align @ _src_mean)
+
+                        # Transform backfit camera center: subset → full
+                        _bf_center_sub = _np.asarray(backfit["camera_center"], dtype=_np.float64)
+                        _bf_center_full = _scale * (_R_align @ _bf_center_sub) + _t_align
+
+                        _ref_pose = full_camera_pose_by_image.get(omitted_image_name)
+                        if _ref_pose is not None:
+                            _ref_R = _np.asarray(_ref_pose[0], dtype=_np.float64).reshape(3, 3)
+                            _ref_t = _np.asarray(_ref_pose[1], dtype=_np.float64).reshape(3, 1)
+                            _ref_center = _camera_center_from_pose(_ref_R, _ref_t)
+                            backfit["center_shift_vs_full"] = float(_np.linalg.norm(_bf_center_full - _ref_center))
+
+                            # Rotation: R_bf is in subset frame, transform to full frame.
+                            # P_cam = R_bf @ P_sub + t_bf
+                            # P_full = scale * R_align @ P_sub + t_align
+                            # => P_sub = R_align^T @ (P_full - t_align) / scale
+                            # => R_bf_full = R_bf @ R_align^T
+                            _R_bf = _np.asarray(backfit.get("_R_matrix"), dtype=_np.float64).reshape(3, 3)
+                            _R_bf_full = _R_bf @ _R_align.T
+                            backfit["rotation_delta_deg_vs_full"] = _rotation_delta_degrees(_R_bf_full, _ref_R)
+
+                        # Also report Procrustes alignment residual as quality metric
+                        _aligned_src = _scale * (_src @ _R_align.T) + _t_align
+                        _align_errors = _np.linalg.norm(_aligned_src - _dst, axis=1)
+                        backfit["procrustes_alignment_error"] = float(_np.mean(_align_errors))
+            except Exception:
+                pass
 
         subset_total = int(subset_summary.get("reconstructed_points_3d_total") or 0)
         subset_primary = int(subset_summary.get("reconstructed_points_3d") or 0)
@@ -3201,6 +3368,12 @@ def _build_scene_regression_report(
                 "backfit": backfit,
             }
         )
+
+    # Strip internal fields from backfit results before output
+    for _entry in leave_one_out_entries:
+        _bf = _entry.get("backfit")
+        if isinstance(_bf, dict):
+            _bf.pop("_R_matrix", None)
 
     successful_loo = [item for item in leave_one_out_entries if item.get("success")]
     successful_backfit = [
