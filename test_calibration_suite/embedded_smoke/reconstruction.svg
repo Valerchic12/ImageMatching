@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="500" viewBox="0 0 1160 500">
+<rect width="100%" height="100%" fill="#101316"/>
+<style>
+text { font-family: Consolas, "Courier New", monospace; fill: #e9edf2; }
+.panel { fill: #171c22; stroke: #314050; stroke-width: 1; }
+.axis { stroke: #3d4f63; stroke-width: 1; stroke-dasharray: 4 4; }
+.path { fill: none; stroke: #6cb6ff; stroke-width: 2; }
+.point { fill: #b0beca; opacity: 0.7; }
+.secondary-point { fill: #7dd3a7; opacity: 0.55; }
+.camera { fill: #ffd166; stroke: #141414; stroke-width: 1; }
+.label { font-size: 14px; }
+.small { font-size: 12px; fill: #9fb0c0; }
+</style>
+<text x="40" y="32" font-size="20">Calibration Reconstruction Preview</text>
+<text x="40" y="58" class="small">cameras=['3', '4', '5', '6', '1', '2', '0'] | strict_points=23 | secondary_points=3 | total_points=26 | error=0.4439px</text>
+<text x="40" y="82" class="small">orbit_span=3.204 | height_range=0.652 | planar_ratio=0.204</text>
+<rect x="40" y="110" width="520" height="360" rx="12" class="panel"/>
+<text x="60" y="138" font-size="16">Top View (orbit plane)</text>
+<line x1="52" y1="235.78" x2="548" y2="235.78" class="axis"/>
+<line x1="254.88" y1="122" x2="254.88" y2="458" class="axis"/>
+<circle cx="201.50" cy="235.51" r="2.6" class="point"/>
+<circle cx="223.12" cy="258.51" r="2.6" class="point"/>
+<circle cx="219.63" cy="260.84" r="2.6" class="point"/>
+<circle cx="223.40" cy="260.52" r="2.6" class="point"/>
+<circle cx="216.91" cy="261.38" r="2.6" class="point"/>
+<circle cx="213.41" cy="259.48" r="2.6" class="point"/>
+<circle cx="199.33" cy="234.59" r="2.6" class="point"/>
+<circle cx="231.33" cy="254.79" r="2.6" class="point"/>
+<circle cx="236.26" cy="252.77" r="2.6" class="point"/>
+<circle cx="236.42" cy="253.88" r="2.6" class="point"/>
+<circle cx="258.50" cy="241.48" r="2.6" class="point"/>
+<circle cx="277.73" cy="233.87" r="2.6" class="point"/>
+<circle cx="283.54" cy="231.83" r="2.6" class="point"/>
+<circle cx="284.46" cy="230.83" r="2.6" class="point"/>
+<circle cx="288.83" cy="227.77" r="2.6" class="point"/>
+<circle cx="290.09" cy="226.31" r="2.6" class="point"/>
+<circle cx="282.65" cy="228.18" r="2.6" class="point"/>
+<circle cx="287.27" cy="225.10" r="2.6" class="point"/>
+<circle cx="287.32" cy="223.54" r="2.6" class="point"/>
+<circle cx="288.18" cy="222.53" r="2.6" class="point"/>
+<circle cx="280.82" cy="199.47" r="2.6" class="point"/>
+<circle cx="279.61" cy="199.57" r="2.6" class="point"/>
+<circle cx="284.71" cy="211.06" r="2.6" class="point"/>
+<circle cx="199.09" cy="230.69" r="2.2" class="secondary-point"/>
+<circle cx="276.72" cy="233.22" r="2.2" class="secondary-point"/>
+<circle cx="275.98" cy="232.59" r="2.2" class="secondary-point"/>
+<polyline points="107.29,310.53 136.52,356.25 156.32,380.87 209.94,403.14 325.29,410.69 448.35,253.71 400.43,169.31" class="path"/>
+<circle cx="107.29" cy="310.53" r="5.5" class="camera"/>
+<text x="115.29" y="302.53" class="label">0</text>
+<circle cx="136.52" cy="356.25" r="5.5" class="camera"/>
+<text x="144.52" y="348.25" class="label">1</text>
+<circle cx="156.32" cy="380.87" r="5.5" class="camera"/>
+<text x="164.32" y="372.87" class="label">2</text>
+<circle cx="209.94" cy="403.14" r="5.5" class="camera"/>
+<text x="217.94" y="395.14" class="label">3</text>
+<circle cx="325.29" cy="410.69" r="5.5" class="camera"/>
+<text x="333.29" y="402.69" class="label">4</text>
+<circle cx="448.35" cy="253.71" r="5.5" class="camera"/>
+<text x="456.35" y="245.71" class="label">5</text>
+<circle cx="400.43" cy="169.31" r="5.5" class="camera"/>
+<text x="408.43" y="161.31" class="label">6</text>
+<rect x="600" y="110" width="520" height="360" rx="12" class="panel"/>
+<text x="620" y="138" font-size="16">Side View (height)</text>
+<line x1="612" y1="347.16" x2="1108" y2="347.16" class="axis"/>
+<line x1="834.49" y1="122" x2="834.49" y2="458" class="axis"/>
+<circle cx="775.12" cy="348.08" r="2.6" class="point"/>
+<circle cx="799.17" cy="346.77" r="2.6" class="point"/>
+<circle cx="795.29" cy="342.43" r="2.6" class="point"/>
+<circle cx="799.47" cy="340.20" r="2.6" class="point"/>
+<circle cx="792.27" cy="335.10" r="2.6" class="point"/>
+<circle cx="788.37" cy="335.25" r="2.6" class="point"/>
+<circle cx="772.71" cy="338.07" r="2.6" class="point"/>
+<circle cx="808.30" cy="350.17" r="2.6" class="point"/>
+<circle cx="813.78" cy="349.66" r="2.6" class="point"/>
+<circle cx="813.96" cy="348.05" r="2.6" class="point"/>
+<circle cx="838.52" cy="334.92" r="2.6" class="point"/>
+<circle cx="859.90" cy="352.26" r="2.6" class="point"/>
+<circle cx="866.37" cy="345.42" r="2.6" class="point"/>
+<circle cx="867.39" cy="348.37" r="2.6" class="point"/>
+<circle cx="872.25" cy="339.71" r="2.6" class="point"/>
+<circle cx="873.65" cy="345.02" r="2.6" class="point"/>
+<circle cx="865.38" cy="359.18" r="2.6" class="point"/>
+<circle cx="870.51" cy="355.30" r="2.6" class="point"/>
+<circle cx="870.57" cy="351.47" r="2.6" class="point"/>
+<circle cx="871.53" cy="349.98" r="2.6" class="point"/>
+<circle cx="863.34" cy="352.91" r="2.6" class="point"/>
+<circle cx="861.99" cy="354.54" r="2.6" class="point"/>
+<circle cx="867.67" cy="354.20" r="2.6" class="point"/>
+<circle cx="772.44" cy="338.50" r="2.2" class="secondary-point"/>
+<circle cx="858.78" cy="354.76" r="2.2" class="secondary-point"/>
+<circle cx="857.95" cy="355.98" r="2.2" class="secondary-point"/>
+<polyline points="670.34,343.42 702.86,333.29 724.88,336.36 784.51,415.50 912.79,320.89 1049.66,345.01 996.37,361.44" class="path"/>
+<circle cx="670.34" cy="343.42" r="5.5" class="camera"/>
+<text x="678.34" y="335.42" class="label">0</text>
+<circle cx="702.86" cy="333.29" r="5.5" class="camera"/>
+<text x="710.86" y="325.29" class="label">1</text>
+<circle cx="724.88" cy="336.36" r="5.5" class="camera"/>
+<text x="732.88" y="328.36" class="label">2</text>
+<circle cx="784.51" cy="415.50" r="5.5" class="camera"/>
+<text x="792.51" y="407.50" class="label">3</text>
+<circle cx="912.79" cy="320.89" r="5.5" class="camera"/>
+<text x="920.79" y="312.89" class="label">4</text>
+<circle cx="1049.66" cy="345.01" r="5.5" class="camera"/>
+<text x="1057.66" y="337.01" class="label">5</text>
+<circle cx="996.37" cy="361.44" r="5.5" class="camera"/>
+<text x="1004.37" y="353.44" class="label">6</text>
+</svg>

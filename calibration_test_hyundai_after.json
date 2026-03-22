@@ -1,0 +1,4225 @@
+{
+  "success": true,
+  "point_source": {
+    "mode": "default_regression_file",
+    "label": "Add_data_Point.md",
+    "image_count": 7,
+    "observation_count": 203,
+    "track_count": 48,
+    "path": "D:\\Script\\IM_v2\\Add_data_Point.md",
+    "default_width": 1600,
+    "default_height": 1200,
+    "effective_width": 1600,
+    "effective_height": 1200
+  },
+  "image_width": 1600,
+  "image_height": 1200,
+  "selected_images": [
+    "020.png",
+    "021.png",
+    "022.png",
+    "023.png",
+    "024.png",
+    "025.png",
+    "026.png"
+  ],
+  "input_point_tracks": 48,
+  "selected_input_observations": 203,
+  "reconstructed_cameras": [
+    "1",
+    "4",
+    "2",
+    "3",
+    "0",
+    "5",
+    "6"
+  ],
+  "reconstructed_points_3d": 19,
+  "reconstructed_points_3d_secondary": 2,
+  "reconstructed_points_3d_total": 21,
+  "mean_reprojection_error_px": 0.1702357828617096,
+  "K": [
+    [
+      2222.219970703125,
+      0.0,
+      800.0
+    ],
+    [
+      0.0,
+      2222.219970703125,
+      600.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "per_camera_focals_px": {},
+  "subpixel_refinement_enabled": true,
+  "calib_data_overrides": {},
+  "subpixel_refinement_stats": {
+    "0": {
+      "point_count": 16,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "1": {
+      "point_count": 31,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "2": {
+      "point_count": 36,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "3": {
+      "point_count": 34,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "4": {
+      "point_count": 36,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "5": {
+      "point_count": 34,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    },
+    "6": {
+      "point_count": 16,
+      "refined_count": 0,
+      "median_shift_px": 0.0,
+      "max_shift_px": 0.0
+    }
+  },
+  "camera_centers": [
+    {
+      "camera_id": "0",
+      "image_name": "020.png",
+      "center": [
+        -0.34526802237113263,
+        0.03705427336168676,
+        0.2035399012488805
+      ],
+      "distance_from_origin": 0.4025065438559224,
+      "orbit_u": 0.9432137414179986,
+      "orbit_v": -0.6391633749797143,
+      "orbit_height": 0.03200410332956657,
+      "orbit_radius": 1.1393778924988838
+    },
+    {
+      "camera_id": "1",
+      "image_name": "021.png",
+      "center": [
+        -0.038109551437032756,
+        -0.01692425017196739,
+        0.040456236361719515
+      ],
+      "distance_from_origin": 0.058098840050129226,
+      "orbit_u": 0.7220388078258301,
+      "orbit_v": -0.9100249580245566,
+      "orbit_height": -0.0076436028262399395,
+      "orbit_radius": 1.1616735618211091
+    },
+    {
+      "camera_id": "2",
+      "image_name": "022.png",
+      "center": [
+        0.17767084767300786,
+        0.013806046441019909,
+        -0.07054027182219191
+      ],
+      "distance_from_origin": 0.19165976880901606,
+      "orbit_u": 0.5679710816474068,
+      "orbit_v": -1.0955812638618974,
+      "orbit_height": 0.033071869825338426,
+      "orbit_radius": 1.2340540730911906
+    },
+    {
+      "camera_id": "3",
+      "image_name": "023.png",
+      "center": [
+        0.48169087696445606,
+        0.4891238996438163,
+        0.26492884100432135
+      ],
+      "distance_from_origin": 0.7358366537142967,
+      "orbit_u": 0.17619821381476242,
+      "orbit_v": -0.8950156174035482,
+      "orbit_height": 0.5200854291183278,
+      "orbit_radius": 0.9121944781392657
+    },
+    {
+      "camera_id": "4",
+      "image_name": "024.png",
+      "center": [
+        0.9755846428333435,
+        -0.12371887858245373,
+        0.1850647990520951
+      ],
+      "distance_from_origin": 1.000660150149967,
+      "orbit_u": -0.2712061923301191,
+      "orbit_v": -1.1736148350239184,
+      "orbit_height": -0.06991233468137943,
+      "orbit_radius": 1.204543307542913
+    },
+    {
+      "camera_id": "5",
+      "image_name": "025.png",
+      "center": [
+        1.3727441909532554,
+        0.0005752958105623568,
+        1.6624661614610043
+      ],
+      "distance_from_origin": 2.155973256504835,
+      "orbit_u": -1.2075391070858452,
+      "orbit_v": 0.03497736782314664,
+      "orbit_height": 0.06604756404203375,
+      "orbit_radius": 1.2080455750515027
+    },
+    {
+      "camera_id": "6",
+      "image_name": "026.png",
+      "center": [
+        0.9625914857971167,
+        0.033626266570178566,
+        1.9236989589402687
+      ],
+      "distance_from_origin": 2.151355567766617,
+      "orbit_u": -0.9306765452900337,
+      "orbit_v": 0.43587307144999965,
+      "orbit_height": 0.07982941381935299,
+      "orbit_radius": 1.0276887497526908
+    }
+  ],
+  "camera_geometry": {
+    "camera_count": 7,
+    "point_count": 19,
+    "secondary_point_count": 2,
+    "total_point_count": 21,
+    "scene_origin": [
+      0.27238760978762977,
+      -0.01863970656318466,
+      1.1598902268136366
+    ],
+    "plane_basis": [
+      [
+        -0.9200846911140127,
+        0.03933551286484246,
+        -0.38973950095582044
+      ],
+      [
+        -0.38919695411821253,
+        0.02093382100587782,
+        0.9209166661773474
+      ],
+      [
+        0.04438346632179616,
+        0.9990067530130884,
+        -0.003951626438354673
+      ]
+    ],
+    "plane_normal": [
+      0.04438346632179616,
+      0.9990067530130884,
+      -0.003951626438354673
+    ],
+    "orbit_span": 2.6862965466294284,
+    "height_range": 0.5899977637997073,
+    "height_std": 0.1801913369280562,
+    "planar_ratio": 0.21963240229005765,
+    "likely_worth_testing_in_blender": true
+  },
+  "initial_focal_estimate": {
+    "mode": "image_based",
+    "focal_px": 1677.6304840990078,
+    "confidence": 0.28,
+    "image_estimates": [
+      {
+        "image_name": "020.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\020.png",
+        "focal_px": 1668.565523256413,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "021.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\021.png",
+        "focal_px": 1697.8425040210789,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "022.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\022.png",
+        "focal_px": 1694.461042778923,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "023.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\023.png",
+        "focal_px": 1670.1585014654934,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "024.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\024.png",
+        "focal_px": 1683.5984492378109,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "025.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\025.png",
+        "focal_px": 1654.670126056374,
+        "confidence": 0.28
+      },
+      {
+        "image_name": "026.png",
+        "image_path": "D:/Work/Car/Hyundai i20/Ref\\026.png",
+        "focal_px": 1674.117241876963,
+        "confidence": 0.28
+      }
+    ],
+    "fallback_focal_px": 2222.22,
+    "bootstrap_focal_px": 2222.22,
+    "bootstrap_source": "fallback_low_confidence"
+  },
+  "two_stage_pose_scaffold_summary": null,
+  "reprojection_diagnostics": {
+    "worst_observations": [
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 46,
+        "observed": [
+          575.8779907226562,
+          366.53900146484375
+        ],
+        "projected": [
+          576.2223545432647,
+          360.1780921935523
+        ],
+        "residual": [
+          0.34436382060846427,
+          -6.360909271291462
+        ],
+        "error": 6.370223951993033,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          574.0820649745885,
+          358.84260958667505
+        ],
+        "track2d_error": 7.903151095285578,
+        "track2d_vs_3d_delta": 2.5227669791432636,
+        "track2d_support_pair": [
+          "1",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "2",
+          "4"
+        ],
+        "track2d_support_mean_error": 2.318344878143268,
+        "track2d_support_max_error": 4.728823227253123,
+        "track2d_pair_baseline": 1.0295108783097813
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 23,
+        "observed": [
+          844.7059936523438,
+          366.53399658203125
+        ],
+        "projected": [
+          841.8822054007856,
+          361.18405722710696
+        ],
+        "residual": [
+          -2.8237882515581987,
+          -5.349939354924288
+        ],
+        "error": 6.0494323032005095,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          838.1642114546357,
+          359.47925546306976
+        ],
+        "track2d_error": 9.621033550394444,
+        "track2d_vs_3d_delta": 4.090211246167005,
+        "track2d_support_pair": [
+          "4",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.389823140268147,
+        "track2d_support_max_error": 0.46666090649043074,
+        "track2d_pair_baseline": 1.7457878046208612
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "point_id": 23,
+        "observed": [
+          360.9209899902344,
+          365.3559875488281
+        ],
+        "projected": [
+          364.39470050136185,
+          367.5714956109007
+        ],
+        "residual": [
+          3.4737105111274786,
+          2.2155080620725585
+        ],
+        "error": 4.120089888367247,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          368.91960249626544,
+          370.3373385835025
+        ],
+        "track2d_error": 9.422932672596582,
+        "track2d_vs_3d_delta": 5.303265542340247,
+        "track2d_support_pair": [
+          "4",
+          "5"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "5"
+        ],
+        "track2d_support_mean_error": 2.8221241979041274,
+        "track2d_support_max_error": 3.0746394863191724,
+        "track2d_pair_baseline": 1.5348939813871691
+      },
+      {
+        "camera_id": "0",
+        "image_name": "020.png",
+        "point_id": 46,
+        "observed": [
+          1266.612060546875,
+          450.98699951171875
+        ],
+        "projected": [
+          1266.5035660460103,
+          454.91288940359914
+        ],
+        "residual": [
+          -0.10849450086470824,
+          3.925889891880388
+        ],
+        "error": 3.9273887635280627,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          1265.3361014607701,
+          456.21153960302814
+        ],
+        "track2d_error": 5.378093598582378,
+        "track2d_vs_3d_delta": 1.7462720000810277,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "track2d_support_mean_error": 2.962939747694523,
+        "track2d_support_max_error": 4.950589411019245,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 46,
+        "observed": [
+          257.1080017089844,
+          416.44500732421875
+        ],
+        "projected": [
+          259.5393588939554,
+          416.9580051618519
+        ],
+        "residual": [
+          2.4313571849710343,
+          0.5129978376331223
+        ],
+        "error": 2.484887229297646,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          261.85122137070243,
+          417.6386667584451
+        ],
+        "track2d_error": 4.891109854033775,
+        "track2d_vs_3d_delta": 2.409980979275086,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "track2d_support_mean_error": 3.0846856838316743,
+        "track2d_support_max_error": 5.378093598582378,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "1",
+        "image_name": "021.png",
+        "point_id": 46,
+        "observed": [
+          1020.68798828125,
+          507.7279968261719
+        ],
+        "projected": [
+          1020.4489105968232,
+          505.6280676306751
+        ],
+        "residual": [
+          -0.2390776844267748,
+          -2.0999291954967703
+        ],
+        "error": 2.1134949172615913,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          1021.4259837603659,
+          503.7418651429165
+        ],
+        "track2d_error": 4.053872608191816,
+        "track2d_vs_3d_delta": 2.124248524006082,
+        "track2d_support_pair": [
+          "0",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "2",
+          "3",
+          "4"
+        ],
+        "track2d_support_mean_error": 3.7916108450266313,
+        "track2d_support_max_error": 7.551366308040543,
+        "track2d_pair_baseline": 0.5908684143941579
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 23,
+        "observed": [
+          1483.093994140625,
+          347.781005859375
+        ],
+        "projected": [
+          1484.234123195203,
+          348.79960923731437
+        ],
+        "residual": [
+          1.140129054577983,
+          1.018603377939371
+        ],
+        "error": 1.5288711857584283,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          1495.3069837847856,
+          352.0005987859674
+        ],
+        "track2d_error": 12.921380751085527,
+        "track2d_vs_3d_delta": 11.526255928397507,
+        "track2d_support_pair": [
+          "5",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "5",
+          "6"
+        ],
+        "track2d_support_mean_error": 3.4269252247116313,
+        "track2d_support_max_error": 3.8129527857954204,
+        "track2d_pair_baseline": 0.48740145947041824
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "point_id": 46,
+        "observed": [
+          835.2429809570312,
+          466.625
+        ],
+        "projected": [
+          833.9911787995679,
+          466.4890396718946
+        ],
+        "residual": [
+          -1.2518021574633167,
+          -0.13596032810539782
+        ],
+        "error": 1.2591639497096245,
+        "point_source": "secondary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          833.5997429908653,
+          465.7551414324813
+        ],
+        "track2d_error": 1.8592700021608033,
+        "track2d_vs_3d_delta": 0.8317623567754511,
+        "track2d_support_pair": [
+          "0",
+          "1"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "3",
+          "4"
+        ],
+        "track2d_support_mean_error": 3.7345588542022545,
+        "track2d_support_max_error": 7.4694809508824855,
+        "track2d_pair_baseline": 0.35193222219978004
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 29,
+        "observed": [
+          1325.3909912109375,
+          525.4600219726562
+        ],
+        "projected": [
+          1325.511221970229,
+          524.6450820727163
+        ],
+        "residual": [
+          0.12023075929141669,
+          -0.8149398999399864
+        ],
+        "error": 0.8237611765517877,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 31,
+        "observed": [
+          1151.0140380859375,
+          570.1840209960938
+        ],
+        "projected": [
+          1150.9376815849898,
+          570.7920616177108
+        ],
+        "residual": [
+          -0.07635650094766788,
+          0.6080406216170786
+        ],
+        "error": 0.6128162145157833,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "point_id": 29,
+        "observed": [
+          1093.3509521484375,
+          568.5700073242188
+        ],
+        "projected": [
+          1093.2780681192967,
+          569.1599886423063
+        ],
+        "residual": [
+          -0.07288402914082326,
+          0.5899813180875526
+        ],
+        "error": 0.5944661785132324,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 28,
+        "observed": [
+          955.85498046875,
+          526.364013671875
+        ],
+        "projected": [
+          955.9319099858324,
+          525.7850714876279
+        ],
+        "residual": [
+          0.07692951708236251,
+          -0.5789421842471256
+        ],
+        "error": 0.5840309951529613,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 39,
+        "observed": [
+          772.5330200195312,
+          487.385009765625
+        ],
+        "projected": [
+          772.461306283589,
+          487.8794051960158
+        ],
+        "residual": [
+          -0.07171373594223951,
+          0.4943954303907958
+        ],
+        "error": 0.49956951619778955,
+        "point_source": "primary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          772.4256084088053,
+          488.1121290095574
+        ],
+        "track2d_error": 0.7350099652491702,
+        "track2d_vs_3d_delta": 0.23544577221395763,
+        "track2d_support_pair": [
+          "4",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.07294804050502292,
+        "track2d_support_max_error": 0.0848849138102215,
+        "track2d_pair_baseline": 1.7457878046208612
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 44,
+        "observed": [
+          1020.8460083007812,
+          447.9599914550781
+        ],
+        "projected": [
+          1020.7660108723603,
+          448.44956101501896
+        ],
+        "residual": [
+          -0.07999742842093838,
+          0.48956955994083273
+        ],
+        "error": 0.49606243818154966,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "point_id": 31,
+        "observed": [
+          800.0,
+          628.156005859375
+        ],
+        "projected": [
+          800.0507518751056,
+          627.7002801880225
+        ],
+        "residual": [
+          0.05075187510556134,
+          -0.45572567135252484
+        ],
+        "error": 0.4585429536656735,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "point_id": 28,
+        "observed": [
+          502.72100830078125,
+          568.5700073242188
+        ],
+        "projected": [
+          502.6698548683672,
+          569.0167233069855
+        ],
+        "residual": [
+          -0.0511534324140257,
+          0.44671598276670466
+        ],
+        "error": 0.4496352331690201,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 24,
+        "observed": [
+          884.4450073242188,
+          451.6889953613281
+        ],
+        "projected": [
+          884.5178799014078,
+          451.28768990080897
+        ],
+        "residual": [
+          0.07287257718905948,
+          -0.40130546051915417
+        ],
+        "error": 0.4078682203220371,
+        "point_source": "primary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          884.5631351986641,
+          451.09366879943695
+        ],
+        "track2d_error": 0.6069332006194235,
+        "track2d_vs_3d_delta": 0.19922908850708831,
+        "track2d_support_pair": [
+          "4",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.053293256945233645,
+        "track2d_support_max_error": 0.06525337947117457,
+        "track2d_pair_baseline": 1.7457878046208612
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "point_id": 44,
+        "observed": [
+          566.3720092773438,
+          465.85699462890625
+        ],
+        "projected": [
+          566.421930640631,
+          465.47927192443893
+        ],
+        "residual": [
+          0.04992136328723973,
+          -0.3777227044673168
+        ],
+        "error": 0.38100732799063136,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 21,
+        "observed": [
+          1381.8599853515625,
+          439.17498779296875
+        ],
+        "projected": [
+          1381.8333112956025,
+          439.4653865857541
+        ],
+        "residual": [
+          -0.026674055960029364,
+          0.29039879278536773
+        ],
+        "error": 0.2916212682788375,
+        "point_source": "primary",
+        "observation_status": "kept"
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 39,
+        "observed": [
+          1389.8509521484375,
+          454.65899658203125
+        ],
+        "projected": [
+          1389.8782426049388,
+          454.39157748543806
+        ],
+        "residual": [
+          0.027290456501305016,
+          -0.2674190965931871
+        ],
+        "error": 0.2688080025571522,
+        "point_source": "primary",
+        "observation_status": "kept",
+        "track2d_projected": [
+          1389.9057680109913,
+          454.24600865481074
+        ],
+        "track2d_error": 0.41660989764696593,
+        "track2d_vs_3d_delta": 0.1481483460203425,
+        "track2d_support_pair": [
+          "5",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "5",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.3714163017081712,
+        "track2d_support_max_error": 0.4103160265838744,
+        "track2d_pair_baseline": 0.48740145947041824
+      }
+    ],
+    "worst_removed_observations": [
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 39,
+        "observed": [
+          1474.7772216796875,
+          738.2930297851562
+        ],
+        "projected": [
+          1715.2121774729076,
+          801.6580949111675
+        ],
+        "residual": [
+          240.43495579322007,
+          63.365065126011245
+        ],
+        "error": 248.64452426247263,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1715.2559751007975,
+          801.8526840145803
+        ],
+        "track2d_error": 248.73652826381365,
+        "track2d_vs_3d_delta": 0.19945714170162362,
+        "track2d_support_pair": [
+          "4",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "5",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.293635348753072,
+        "track2d_support_max_error": 0.7350099652491702,
+        "track2d_pair_baseline": 1.7457878046208612
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 21,
+        "observed": [
+          1465.886962890625,
+          722.7420043945312
+        ],
+        "projected": [
+          1703.7442474965194,
+          784.2328077279201
+        ],
+        "residual": [
+          237.8572846058944,
+          61.49080333338884
+        ],
+        "error": 245.67703745908966,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1703.7373535295071,
+          784.2027697203902
+        ],
+        "track2d_error": 245.6628461967929,
+        "track2d_vs_3d_delta": 0.030818966198335213,
+        "track2d_support_pair": [
+          "4",
+          "5"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.277241516447947,
+        "track2d_support_max_error": 0.2947461083574385,
+        "track2d_pair_baseline": 1.5348939813871691
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 32,
+        "observed": [
+          1108.4300537109375,
+          904.7540283203125
+        ],
+        "projected": [
+          1286.524981006586,
+          1033.6744546830923
+        ],
+        "residual": [
+          178.0949272956484,
+          128.92042636277984
+        ],
+        "error": 219.85968130151383,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1286.524992831475,
+          1033.674390526436
+        ],
+        "track2d_error": 219.85965326022415,
+        "track2d_vs_3d_delta": 6.523729428675049e-05,
+        "track2d_support_pair": [
+          "4",
+          "5"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "4",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.0037116482444953607,
+        "track2d_support_max_error": 0.005764651144079307,
+        "track2d_pair_baseline": 1.5348939813871691
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 41,
+        "observed": [
+          1392.678955078125,
+          778.6749877929688
+        ],
+        "projected": [
+          1598.3948106268235,
+          854.2075870402881
+        ],
+        "residual": [
+          205.71585554869853,
+          75.53259924731935
+        ],
+        "error": 219.1442145555961,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1598.3946993515483,
+          854.2078220351292
+        ],
+        "track2d_error": 219.14419109486377,
+        "track2d_vs_3d_delta": 0.0002600091579509064,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.004211783643505564,
+        "track2d_support_max_error": 0.006353339785071108,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 45,
+        "observed": [
+          259.2850036621094,
+          335.68798828125
+        ],
+        "projected": [
+          310.28940693046536,
+          376.63874919876287
+        ],
+        "residual": [
+          51.004403268355986,
+          40.950760917512866
+        ],
+        "error": 65.40958624303002,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          310.2881758787347,
+          376.645478885432
+        ],
+        "track2d_error": 65.4128398156692,
+        "track2d_vs_3d_delta": 0.006841357396617047,
+        "track2d_support_pair": [
+          "0",
+          "3"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "track2d_support_mean_error": 0.02770911274583814,
+        "track2d_support_max_error": 0.0740756732921422,
+        "track2d_pair_baseline": 0.9444557004547592
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 47,
+        "observed": [
+          714.6010131835938,
+          603.416015625
+        ],
+        "projected": [
+          757.3521248678319,
+          635.7110297309298
+        ],
+        "residual": [
+          42.75111168423814,
+          32.295014105929795
+        ],
+        "error": 53.578218394608896,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          757.354208039931,
+          635.706244085429
+        ],
+        "track2d_error": 53.5769962245985,
+        "track2d_vs_3d_delta": 0.005219387785309701,
+        "track2d_support_pair": [
+          "0",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.008565644900540821,
+        "track2d_support_max_error": 0.017673101405259406,
+        "track2d_pair_baseline": 1.330729536369056
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 46,
+        "observed": [
+          259.2850036621094,
+          459.5060119628906
+        ],
+        "projected": [
+          306.0543085480799,
+          470.6051432221643
+        ],
+        "residual": [
+          46.76930488597054,
+          11.09913125927369
+        ],
+        "error": 48.06827013974451,
+        "point_source": "secondary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          305.6631760063654,
+          470.22900529847016
+        ],
+        "track2d_error": 47.601653921564505,
+        "track2d_vs_3d_delta": 0.542645743398958,
+        "track2d_support_pair": [
+          "0",
+          "1"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "track2d_support_mean_error": 3.359501083793964,
+        "track2d_support_max_error": 7.4694809508824855,
+        "track2d_pair_baseline": 0.35193222219978004
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "point_id": 7,
+        "observed": [
+          264.2640075683594,
+          451.6669921875
+        ],
+        "projected": [
+          308.36602260900077,
+          464.8496425530665
+        ],
+        "residual": [
+          44.10201504064139,
+          13.182650365566474
+        ],
+        "error": 46.030098862654306,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          308.3636521385981,
+          464.8379799583838
+        ],
+        "track2d_error": 46.02448880848281,
+        "track2d_vs_3d_delta": 0.011901060652808753,
+        "track2d_support_pair": [
+          "1",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.03865737321965064,
+        "track2d_support_max_error": 0.07434908037889726,
+        "track2d_pair_baseline": 1.0295108783097813
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "point_id": 32,
+        "observed": [
+          1142.4000244140625,
+          831.5070190429688
+        ],
+        "projected": [
+          1169.3753057122394,
+          818.1487880107815
+        ],
+        "residual": [
+          26.975281298176924,
+          -13.358231032187291
+        ],
+        "error": 30.101630145642698,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1169.3753454176272,
+          818.1487796195506
+        ],
+        "track2d_error": 30.10166945102412,
+        "track2d_vs_3d_delta": 4.058239236568614e-05,
+        "track2d_support_pair": [
+          "4",
+          "5"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "4",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.0037116482444953607,
+        "track2d_support_max_error": 0.005764651144079307,
+        "track2d_pair_baseline": 1.5348939813871691
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "point_id": 39,
+        "observed": [
+          1455.93798828125,
+          551.0859985351562
+        ],
+        "projected": [
+          1469.3156610709145,
+          566.6519297462265
+        ],
+        "residual": [
+          13.37767278966453,
+          15.565931211070279
+        ],
+        "error": 20.524627736821504,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1469.3115027606468,
+          566.8380762441859
+        ],
+        "track2d_error": 20.66346635204136,
+        "track2d_vs_3d_delta": 0.18619293823028252,
+        "track2d_support_pair": [
+          "4",
+          "6"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "5",
+          "6"
+        ],
+        "track2d_support_mean_error": 0.293635348753072,
+        "track2d_support_max_error": 0.7350099652491702,
+        "track2d_pair_baseline": 1.7457878046208612
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "point_id": 21,
+        "observed": [
+          1454.1259765625,
+          536.2269897460938
+        ],
+        "projected": [
+          1465.9595080127606,
+          552.810750015652
+        ],
+        "residual": [
+          11.83353145026058,
+          16.583760269558297
+        ],
+        "error": 20.372863599957828,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1465.9601894841512,
+          552.7820925809247
+        ],
+        "track2d_error": 20.34993919761931,
+        "track2d_vs_3d_delta": 0.028665536248446956,
+        "track2d_support_pair": [
+          "4",
+          "5"
+        ],
+        "track2d_support_camera_ids": [
+          "4",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.277241516447947,
+        "track2d_support_max_error": 0.2947461083574385,
+        "track2d_pair_baseline": 1.5348939813871691
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 41,
+        "observed": [
+          1277.8719482421875,
+          526.4530029296875
+        ],
+        "projected": [
+          1259.6980262632158,
+          521.663360744062
+        ],
+        "residual": [
+          -18.173921978971748,
+          -4.789642185625553
+        ],
+        "error": 18.794470260267417,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1259.697805599555,
+          521.6636751876667
+        ],
+        "track2d_error": 18.794603507795536,
+        "track2d_vs_3d_delta": 0.0003841448056943878,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "5"
+        ],
+        "track2d_support_mean_error": 0.004211783643505564,
+        "track2d_support_max_error": 0.006353339785071108,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "point_id": 47,
+        "observed": [
+          899.86865234375,
+          653.4515991210938
+        ],
+        "projected": [
+          913.0308176548876,
+          650.148446418771
+        ],
+        "residual": [
+          13.162165311137642,
+          -3.303152702322791
+        ],
+        "error": 13.570313682910113,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          913.0325997822886,
+          650.1434780779482
+        ],
+        "track2d_error": 13.573252263209014,
+        "track2d_vs_3d_delta": 0.005278294099821669,
+        "track2d_support_pair": [
+          "0",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.008565644900540821,
+        "track2d_support_max_error": 0.017673101405259406,
+        "track2d_pair_baseline": 1.330729536369056
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 5,
+        "observed": [
+          293.2130126953125,
+          502.34698486328125
+        ],
+        "projected": [
+          283.8620478028363,
+          501.3371355572777
+        ],
+        "residual": [
+          -9.350964892476213,
+          -1.0098493060035594
+        ],
+        "error": 9.40533572187397,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          283.860028171493,
+          501.3326136883802
+        ],
+        "track2d_error": 9.407830163394584,
+        "track2d_vs_3d_delta": 0.004952394278403857,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "3"
+        ],
+        "track2d_support_mean_error": 0.03374789553145608,
+        "track2d_support_max_error": 0.050097912566346096,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 45,
+        "observed": [
+          229.4669952392578,
+          277.375
+        ],
+        "projected": [
+          221.0590867869406,
+          274.4529536003809
+        ],
+        "residual": [
+          -8.407908452317201,
+          -2.9220463996190915
+        ],
+        "error": 8.901195408711907,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          221.0583821218106,
+          274.4631184744987
+        ],
+        "track2d_error": 8.898529573893715,
+        "track2d_vs_3d_delta": 0.010189269786186379,
+        "track2d_support_pair": [
+          "0",
+          "3"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "track2d_support_mean_error": 0.02770911274583814,
+        "track2d_support_max_error": 0.0740756732921422,
+        "track2d_pair_baseline": 0.9444557004547592
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 7,
+        "observed": [
+          590.8309936523438,
+          363.71600341796875
+        ],
+        "projected": [
+          592.1463990939204,
+          356.2763003929923
+        ],
+        "residual": [
+          1.3154054415766723,
+          -7.439703024976438
+        ],
+        "error": 7.555095801879225,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          592.1458619671781,
+          356.25641169793187
+        ],
+        "track2d_error": 7.574588260426979,
+        "track2d_vs_3d_delta": 0.019895946731549402,
+        "track2d_support_pair": [
+          "1",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.03865737321965064,
+        "track2d_support_max_error": 0.07434908037889726,
+        "track2d_pair_baseline": 1.0295108783097813
+      },
+      {
+        "camera_id": "0",
+        "image_name": "020.png",
+        "point_id": 5,
+        "observed": [
+          1205.5269775390625,
+          581.0180053710938
+        ],
+        "projected": [
+          1210.3995070759265,
+          584.7252753297644
+        ],
+        "residual": [
+          4.872529536864022,
+          3.707269958670622
+        ],
+        "error": 6.122531717686238,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          1210.40279908779,
+          584.7182294977454
+        ],
+        "track2d_error": 6.120889997581306,
+        "track2d_vs_3d_delta": 0.007776958978274223,
+        "track2d_support_pair": [
+          "1",
+          "2"
+        ],
+        "track2d_support_camera_ids": [
+          "1",
+          "2",
+          "3"
+        ],
+        "track2d_support_mean_error": 0.03374789553145608,
+        "track2d_support_max_error": 0.050097912566346096,
+        "track2d_pair_baseline": 0.24459304282630714
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "point_id": 8,
+        "observed": [
+          472.770751953125,
+          261.1433410644531
+        ],
+        "projected": [
+          471.5035735122496,
+          266.47480259676803
+        ],
+        "residual": [
+          -1.2671784408753979,
+          5.331461532314904
+        ],
+        "error": 5.479983875119798,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          471.50673473677426,
+          266.4620284757577
+        ],
+        "track2d_error": 5.466824974553382,
+        "track2d_vs_3d_delta": 0.013159464581905997,
+        "track2d_support_pair": [
+          "0",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "2",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.03362376832476751,
+        "track2d_support_max_error": 0.06774726801623936,
+        "track2d_pair_baseline": 1.330729536369056
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "point_id": 6,
+        "observed": [
+          218.73199462890625,
+          441.95001220703125
+        ],
+        "projected": [
+          222.26129739996702,
+          441.5817901642876
+        ],
+        "residual": [
+          3.5293027710607703,
+          -0.3682220427436391
+        ],
+        "error": 3.5484595985553407,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          222.26283497136274,
+          441.58044007110595
+        ],
+        "track2d_error": 3.550129164913668,
+        "track2d_vs_3d_delta": 0.002046186060962732,
+        "track2d_support_pair": [
+          "0",
+          "1"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "1",
+          "3"
+        ],
+        "track2d_support_mean_error": 0.02128688767608278,
+        "track2d_support_max_error": 0.03194029521506773,
+        "track2d_pair_baseline": 0.35193222219978004
+      },
+      {
+        "camera_id": "1",
+        "image_name": "021.png",
+        "point_id": 8,
+        "observed": [
+          934.135009765625,
+          383.760986328125
+        ],
+        "projected": [
+          934.0529112694794,
+          386.73935314854555
+        ],
+        "residual": [
+          -0.08209849614559062,
+          2.978366820420547
+        ],
+        "error": 2.979498125532447,
+        "point_source": "primary",
+        "observation_status": "removed",
+        "track2d_projected": [
+          934.0550291727253,
+          386.72003333384816
+        ],
+        "track2d_error": 2.96012771300831,
+        "track2d_vs_3d_delta": 0.019435553866566643,
+        "track2d_support_pair": [
+          "0",
+          "4"
+        ],
+        "track2d_support_camera_ids": [
+          "0",
+          "2",
+          "4"
+        ],
+        "track2d_support_mean_error": 0.03362376832476751,
+        "track2d_support_max_error": 0.06774726801623936,
+        "track2d_pair_baseline": 1.330729536369056
+      }
+    ],
+    "per_camera": [
+      {
+        "camera_id": "0",
+        "image_name": "020.png",
+        "count": 5,
+        "raw_count": 16,
+        "removed_count": 1,
+        "mean_error": 0.8062395755015241,
+        "p95_error": 3.1500148737346296,
+        "max_error": 3.9273887635280627
+      },
+      {
+        "camera_id": "1",
+        "image_name": "021.png",
+        "count": 8,
+        "raw_count": 31,
+        "removed_count": 1,
+        "mean_error": 0.2856772211392132,
+        "p95_error": 1.390335101439095,
+        "max_error": 2.1134949172615913
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "count": 6,
+        "raw_count": 36,
+        "removed_count": 5,
+        "mean_error": 0.24707587713287574,
+        "p95_error": 0.9599089640857195,
+        "max_error": 1.2591639497096245
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "count": 4,
+        "raw_count": 34,
+        "removed_count": 7,
+        "mean_error": 1.592780754621621,
+        "p95_error": 5.414754411725879,
+        "max_error": 6.370223951993033
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "count": 10,
+        "raw_count": 36,
+        "removed_count": 4,
+        "mean_error": 0.5011336777854499,
+        "p95_error": 2.054680009704997,
+        "max_error": 2.484887229297646
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "count": 13,
+        "raw_count": 34,
+        "removed_count": 3,
+        "mean_error": 0.7813665707017612,
+        "p95_error": 2.914029627211269,
+        "max_error": 6.0494323032005095
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "count": 11,
+        "raw_count": 16,
+        "removed_count": 0,
+        "mean_error": 0.6232710125295537,
+        "p95_error": 2.35727803344024,
+        "max_error": 4.120089888367247
+      }
+    ]
+  },
+  "reprojection_diagnostic_output": {
+    "output_dir": "test_reprojection_diagnostics",
+    "manifest_path": "test_reprojection_diagnostics\\reprojection_diagnostics.json",
+    "camera_files": [
+      {
+        "camera_id": "0",
+        "image_name": "020.png",
+        "output_path": "test_reprojection_diagnostics\\020_residuals.png",
+        "mean_error": 0.8062395755015241,
+        "p95_error": 3.1500148737346296,
+        "max_error": 3.9273887635280627,
+        "raw_count": 16,
+        "removed_count": 1,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "1",
+        "image_name": "021.png",
+        "output_path": "test_reprojection_diagnostics\\021_residuals.png",
+        "mean_error": 0.2856772211392132,
+        "p95_error": 1.390335101439095,
+        "max_error": 2.1134949172615913,
+        "raw_count": 31,
+        "removed_count": 1,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "2",
+        "image_name": "022.png",
+        "output_path": "test_reprojection_diagnostics\\022_residuals.png",
+        "mean_error": 0.24707587713287574,
+        "p95_error": 0.9599089640857195,
+        "max_error": 1.2591639497096245,
+        "raw_count": 36,
+        "removed_count": 5,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "3",
+        "image_name": "023.png",
+        "output_path": "test_reprojection_diagnostics\\023_residuals.png",
+        "mean_error": 1.592780754621621,
+        "p95_error": 5.414754411725879,
+        "max_error": 6.370223951993033,
+        "raw_count": 34,
+        "removed_count": 7,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "4",
+        "image_name": "024.png",
+        "output_path": "test_reprojection_diagnostics\\024_residuals.png",
+        "mean_error": 0.5011336777854499,
+        "p95_error": 2.054680009704997,
+        "max_error": 2.484887229297646,
+        "raw_count": 36,
+        "removed_count": 4,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "5",
+        "image_name": "025.png",
+        "output_path": "test_reprojection_diagnostics\\025_residuals.png",
+        "mean_error": 0.7813665707017612,
+        "p95_error": 2.914029627211269,
+        "max_error": 6.0494323032005095,
+        "raw_count": 34,
+        "removed_count": 3,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      },
+      {
+        "camera_id": "6",
+        "image_name": "026.png",
+        "output_path": "test_reprojection_diagnostics\\026_residuals.png",
+        "mean_error": 0.6232710125295537,
+        "p95_error": 2.35727803344024,
+        "max_error": 4.120089888367247,
+        "raw_count": 16,
+        "removed_count": 0,
+        "coordinate_space": "blender_image",
+        "candidate_lines": []
+      }
+    ]
+  },
+  "scene_regression": {
+    "dataset": {
+      "mode": "default_regression_file",
+      "label": "Add_data_Point.md",
+      "image_count": 7,
+      "observation_count": 203,
+      "track_count": 48,
+      "path": "D:\\Script\\IM_v2\\Add_data_Point.md",
+      "default_width": 1600,
+      "default_height": 1200,
+      "effective_width": 1600,
+      "effective_height": 1200
+    },
+    "scene_stats": {
+      "selected_image_count": 7,
+      "selected_observation_count": 203,
+      "selected_track_count": 48,
+      "full_mean_reprojection_error_px": 0.1702357828617096,
+      "full_primary_points": 19,
+      "full_secondary_points": 2,
+      "full_total_points": 21
+    },
+    "camera_rankings": {
+      "by_mean_error": [
+        {
+          "camera_id": "3",
+          "image_name": "023.png",
+          "count": 4,
+          "raw_count": 34,
+          "removed_count": 7,
+          "kept_ratio": 0.11764705882352941,
+          "removed_ratio": 0.20588235294117646,
+          "mean_error": 1.592780754621621,
+          "p95_error": 5.414754411725879,
+          "max_error": 6.370223951993033
+        },
+        {
+          "camera_id": "0",
+          "image_name": "020.png",
+          "count": 5,
+          "raw_count": 16,
+          "removed_count": 1,
+          "kept_ratio": 0.3125,
+          "removed_ratio": 0.0625,
+          "mean_error": 0.8062395755015241,
+          "p95_error": 3.1500148737346296,
+          "max_error": 3.9273887635280627
+        },
+        {
+          "camera_id": "5",
+          "image_name": "025.png",
+          "count": 13,
+          "raw_count": 34,
+          "removed_count": 3,
+          "kept_ratio": 0.38235294117647056,
+          "removed_ratio": 0.08823529411764706,
+          "mean_error": 0.7813665707017612,
+          "p95_error": 2.914029627211269,
+          "max_error": 6.0494323032005095
+        },
+        {
+          "camera_id": "6",
+          "image_name": "026.png",
+          "count": 11,
+          "raw_count": 16,
+          "removed_count": 0,
+          "kept_ratio": 0.6875,
+          "removed_ratio": 0.0,
+          "mean_error": 0.6232710125295537,
+          "p95_error": 2.35727803344024,
+          "max_error": 4.120089888367247
+        },
+        {
+          "camera_id": "4",
+          "image_name": "024.png",
+          "count": 10,
+          "raw_count": 36,
+          "removed_count": 4,
+          "kept_ratio": 0.2777777777777778,
+          "removed_ratio": 0.1111111111111111,
+          "mean_error": 0.5011336777854499,
+          "p95_error": 2.054680009704997,
+          "max_error": 2.484887229297646
+        },
+        {
+          "camera_id": "1",
+          "image_name": "021.png",
+          "count": 8,
+          "raw_count": 31,
+          "removed_count": 1,
+          "kept_ratio": 0.25806451612903225,
+          "removed_ratio": 0.03225806451612903,
+          "mean_error": 0.2856772211392132,
+          "p95_error": 1.390335101439095,
+          "max_error": 2.1134949172615913
+        },
+        {
+          "camera_id": "2",
+          "image_name": "022.png",
+          "count": 6,
+          "raw_count": 36,
+          "removed_count": 5,
+          "kept_ratio": 0.16666666666666666,
+          "removed_ratio": 0.1388888888888889,
+          "mean_error": 0.24707587713287574,
+          "p95_error": 0.9599089640857195,
+          "max_error": 1.2591639497096245
+        }
+      ],
+      "by_removed_ratio": [
+        {
+          "camera_id": "3",
+          "image_name": "023.png",
+          "count": 4,
+          "raw_count": 34,
+          "removed_count": 7,
+          "kept_ratio": 0.11764705882352941,
+          "removed_ratio": 0.20588235294117646,
+          "mean_error": 1.592780754621621,
+          "p95_error": 5.414754411725879,
+          "max_error": 6.370223951993033
+        },
+        {
+          "camera_id": "2",
+          "image_name": "022.png",
+          "count": 6,
+          "raw_count": 36,
+          "removed_count": 5,
+          "kept_ratio": 0.16666666666666666,
+          "removed_ratio": 0.1388888888888889,
+          "mean_error": 0.24707587713287574,
+          "p95_error": 0.9599089640857195,
+          "max_error": 1.2591639497096245
+        },
+        {
+          "camera_id": "4",
+          "image_name": "024.png",
+          "count": 10,
+          "raw_count": 36,
+          "removed_count": 4,
+          "kept_ratio": 0.2777777777777778,
+          "removed_ratio": 0.1111111111111111,
+          "mean_error": 0.5011336777854499,
+          "p95_error": 2.054680009704997,
+          "max_error": 2.484887229297646
+        },
+        {
+          "camera_id": "5",
+          "image_name": "025.png",
+          "count": 13,
+          "raw_count": 34,
+          "removed_count": 3,
+          "kept_ratio": 0.38235294117647056,
+          "removed_ratio": 0.08823529411764706,
+          "mean_error": 0.7813665707017612,
+          "p95_error": 2.914029627211269,
+          "max_error": 6.0494323032005095
+        },
+        {
+          "camera_id": "0",
+          "image_name": "020.png",
+          "count": 5,
+          "raw_count": 16,
+          "removed_count": 1,
+          "kept_ratio": 0.3125,
+          "removed_ratio": 0.0625,
+          "mean_error": 0.8062395755015241,
+          "p95_error": 3.1500148737346296,
+          "max_error": 3.9273887635280627
+        },
+        {
+          "camera_id": "1",
+          "image_name": "021.png",
+          "count": 8,
+          "raw_count": 31,
+          "removed_count": 1,
+          "kept_ratio": 0.25806451612903225,
+          "removed_ratio": 0.03225806451612903,
+          "mean_error": 0.2856772211392132,
+          "p95_error": 1.390335101439095,
+          "max_error": 2.1134949172615913
+        },
+        {
+          "camera_id": "6",
+          "image_name": "026.png",
+          "count": 11,
+          "raw_count": 16,
+          "removed_count": 0,
+          "kept_ratio": 0.6875,
+          "removed_ratio": 0.0,
+          "mean_error": 0.6232710125295537,
+          "p95_error": 2.35727803344024,
+          "max_error": 4.120089888367247
+        }
+      ]
+    },
+    "point_conflicts": {
+      "point_count": 21,
+      "points": [
+        {
+          "point_id": 39,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 54.02848128508924,
+          "max_error": 248.64452426247263,
+          "mean_kept_error": 0.3244181420506967,
+          "mean_removed_error": 134.58457599964706,
+          "max_removed_error": 248.64452426247263,
+          "mean_track2d_delta": 0.17775324943226173,
+          "max_track2d_delta": 0.23544577221395763
+        },
+        {
+          "point_id": 21,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 4,
+          "kept_count": 2,
+          "removed_count": 2,
+          "removed_ratio": 0.5,
+          "mean_error": 66.65009324785522,
+          "max_error": 245.67703745908966,
+          "mean_kept_error": 0.2752359661867184,
+          "mean_removed_error": 133.02495052952375,
+          "max_removed_error": 245.67703745908966,
+          "mean_track2d_delta": 0.029742251223391084,
+          "max_track2d_delta": 0.030818966198335213
+        },
+        {
+          "point_id": 32,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 49.99447997242424,
+          "max_error": 219.85968130151383,
+          "mean_kept_error": 0.0036961383215564185,
+          "mean_removed_error": 124.98065572357827,
+          "max_removed_error": 219.85968130151383,
+          "mean_track2d_delta": 0.0011619540545144012,
+          "max_track2d_delta": 0.00302511070898991
+        },
+        {
+          "point_id": 41,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 47.590186605292516,
+          "max_error": 219.1442145555961,
+          "mean_kept_error": 0.0040827368663429705,
+          "mean_removed_error": 118.96934240793176,
+          "max_removed_error": 219.1442145555961,
+          "mean_track2d_delta": 0.0014763545941339257,
+          "max_track2d_delta": 0.003336250399430954
+        },
+        {
+          "point_id": 45,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 6,
+          "kept_count": 4,
+          "removed_count": 2,
+          "removed_ratio": 0.3333333333333333,
+          "mean_error": 12.40471230616013,
+          "max_error": 65.40958624303002,
+          "mean_kept_error": 0.029373046304713792,
+          "mean_removed_error": 37.15539082587097,
+          "max_removed_error": 65.40958624303002,
+          "mean_track2d_delta": 0.018147413614993033,
+          "max_track2d_delta": 0.03595320542711754
+        },
+        {
+          "point_id": 47,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 13.434383546983915,
+          "max_error": 53.578218394608896,
+          "mean_kept_error": 0.007795219133523343,
+          "mean_removed_error": 33.574266038759504,
+          "max_removed_error": 53.578218394608896,
+          "mean_track2d_delta": 0.006023415446380152,
+          "max_track2d_delta": 0.007259422291243016
+        },
+        {
+          "point_id": 7,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 10.738074648201971,
+          "max_error": 46.030098862654306,
+          "mean_kept_error": 0.03505952549210874,
+          "mean_removed_error": 26.792597332266766,
+          "max_removed_error": 46.030098862654306,
+          "mean_track2d_delta": 0.024701205536227646,
+          "max_track2d_delta": 0.03980994859492558
+        },
+        {
+          "point_id": 5,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 3.124223343667743,
+          "max_error": 9.40533572187397,
+          "mean_kept_error": 0.031083092926169214,
+          "mean_removed_error": 7.763933719780104,
+          "max_removed_error": 9.40533572187397,
+          "mean_track2d_delta": 0.01931561908838782,
+          "max_track2d_delta": 0.049965797123432014
+        },
+        {
+          "point_id": 8,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 1.7103262078098702,
+          "max_error": 5.479983875119798,
+          "mean_kept_error": 0.030716346132368625,
+          "mean_removed_error": 4.229741000326122,
+          "max_removed_error": 5.479983875119798,
+          "mean_track2d_delta": 0.018010853043384806,
+          "max_track2d_delta": 0.032540292694242565
+        },
+        {
+          "point_id": 6,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 0.8398512916746684,
+          "max_error": 3.5484595985553407,
+          "mean_kept_error": 0.020674942764668195,
+          "mean_removed_error": 2.0686158150396685,
+          "max_removed_error": 3.5484595985553407,
+          "mean_track2d_delta": 0.0117373603406113,
+          "max_track2d_delta": 0.031809957181664794
+        },
+        {
+          "point_id": 46,
+          "point_sources": [
+            "secondary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 6,
+          "kept_count": 5,
+          "removed_count": 1,
+          "removed_ratio": 0.16666666666666666,
+          "mean_error": 10.703904825255746,
+          "max_error": 48.06827013974451,
+          "mean_kept_error": 3.231031762357991,
+          "mean_removed_error": 48.06827013974451,
+          "max_removed_error": 48.06827013974451,
+          "mean_track2d_delta": 1.6962794304466449,
+          "max_track2d_delta": 2.5227669791432636
+        },
+        {
+          "point_id": 23,
+          "point_sources": [
+            "secondary"
+          ],
+          "camera_ids": [
+            "4",
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "024.png",
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 3,
+          "kept_count": 3,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 3.8994644591087284,
+          "max_error": 6.0494323032005095,
+          "mean_kept_error": 3.8994644591087284,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": 6.973244238968253,
+          "max_track2d_delta": 11.526255928397507
+        },
+        {
+          "point_id": 29,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.70911367753251,
+          "max_error": 0.8237611765517877,
+          "mean_kept_error": 0.70911367753251,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 31,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.5356795840907284,
+          "max_error": 0.6128162145157833,
+          "mean_kept_error": 0.5356795840907284,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 28,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.5168331141609908,
+          "max_error": 0.5840309951529613,
+          "mean_kept_error": 0.5168331141609908,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 44,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.4385348830860905,
+          "max_error": 0.49606243818154966,
+          "mean_kept_error": 0.4385348830860905,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 24,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "4",
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "024.png",
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 3,
+          "kept_count": 3,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.26595283791586083,
+          "max_error": 0.4078682203220371,
+          "mean_kept_error": 0.26595283791586083,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": 0.13937029613707255,
+          "max_track2d_delta": 0.19922908850708831
+        },
+        {
+          "point_id": 43,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.22309579367429397,
+          "max_error": 0.2549093386842002,
+          "mean_kept_error": 0.22309579367429397,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 40,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "4",
+            "6"
+          ],
+          "image_names": [
+            "024.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.18371113859303018,
+          "max_error": 0.22200965396490296,
+          "mean_kept_error": 0.18371113859303018,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 30,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.14434585622370932,
+          "max_error": 0.1646903102234054,
+          "mean_kept_error": 0.14434585622370932,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        },
+        {
+          "point_id": 27,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 2,
+          "kept_count": 2,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 0.00034795823326264275,
+          "max_error": 0.0003958138131727205,
+          "mean_kept_error": 0.00034795823326264275,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": null,
+          "max_track2d_delta": null
+        }
+      ],
+      "top_conflict_points": [
+        {
+          "point_id": 39,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 54.02848128508924,
+          "max_error": 248.64452426247263,
+          "mean_kept_error": 0.3244181420506967,
+          "mean_removed_error": 134.58457599964706,
+          "max_removed_error": 248.64452426247263,
+          "mean_track2d_delta": 0.17775324943226173,
+          "max_track2d_delta": 0.23544577221395763
+        },
+        {
+          "point_id": 21,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 4,
+          "kept_count": 2,
+          "removed_count": 2,
+          "removed_ratio": 0.5,
+          "mean_error": 66.65009324785522,
+          "max_error": 245.67703745908966,
+          "mean_kept_error": 0.2752359661867184,
+          "mean_removed_error": 133.02495052952375,
+          "max_removed_error": 245.67703745908966,
+          "mean_track2d_delta": 0.029742251223391084,
+          "max_track2d_delta": 0.030818966198335213
+        },
+        {
+          "point_id": 32,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 49.99447997242424,
+          "max_error": 219.85968130151383,
+          "mean_kept_error": 0.0036961383215564185,
+          "mean_removed_error": 124.98065572357827,
+          "max_removed_error": 219.85968130151383,
+          "mean_track2d_delta": 0.0011619540545144012,
+          "max_track2d_delta": 0.00302511070898991
+        },
+        {
+          "point_id": 41,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 47.590186605292516,
+          "max_error": 219.1442145555961,
+          "mean_kept_error": 0.0040827368663429705,
+          "mean_removed_error": 118.96934240793176,
+          "max_removed_error": 219.1442145555961,
+          "mean_track2d_delta": 0.0014763545941339257,
+          "max_track2d_delta": 0.003336250399430954
+        },
+        {
+          "point_id": 45,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 6,
+          "kept_count": 4,
+          "removed_count": 2,
+          "removed_ratio": 0.3333333333333333,
+          "mean_error": 12.40471230616013,
+          "max_error": 65.40958624303002,
+          "mean_kept_error": 0.029373046304713792,
+          "mean_removed_error": 37.15539082587097,
+          "max_removed_error": 65.40958624303002,
+          "mean_track2d_delta": 0.018147413614993033,
+          "max_track2d_delta": 0.03595320542711754
+        },
+        {
+          "point_id": 47,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 13.434383546983915,
+          "max_error": 53.578218394608896,
+          "mean_kept_error": 0.007795219133523343,
+          "mean_removed_error": 33.574266038759504,
+          "max_removed_error": 53.578218394608896,
+          "mean_track2d_delta": 0.006023415446380152,
+          "max_track2d_delta": 0.007259422291243016
+        },
+        {
+          "point_id": 7,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 10.738074648201971,
+          "max_error": 46.030098862654306,
+          "mean_kept_error": 0.03505952549210874,
+          "mean_removed_error": 26.792597332266766,
+          "max_removed_error": 46.030098862654306,
+          "mean_track2d_delta": 0.024701205536227646,
+          "max_track2d_delta": 0.03980994859492558
+        },
+        {
+          "point_id": 5,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 3.124223343667743,
+          "max_error": 9.40533572187397,
+          "mean_kept_error": 0.031083092926169214,
+          "mean_removed_error": 7.763933719780104,
+          "max_removed_error": 9.40533572187397,
+          "mean_track2d_delta": 0.01931561908838782,
+          "max_track2d_delta": 0.049965797123432014
+        },
+        {
+          "point_id": 8,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 1.7103262078098702,
+          "max_error": 5.479983875119798,
+          "mean_kept_error": 0.030716346132368625,
+          "mean_removed_error": 4.229741000326122,
+          "max_removed_error": 5.479983875119798,
+          "mean_track2d_delta": 0.018010853043384806,
+          "max_track2d_delta": 0.032540292694242565
+        },
+        {
+          "point_id": 6,
+          "point_sources": [
+            "primary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png"
+          ],
+          "total_observations": 5,
+          "kept_count": 3,
+          "removed_count": 2,
+          "removed_ratio": 0.4,
+          "mean_error": 0.8398512916746684,
+          "max_error": 3.5484595985553407,
+          "mean_kept_error": 0.020674942764668195,
+          "mean_removed_error": 2.0686158150396685,
+          "max_removed_error": 3.5484595985553407,
+          "mean_track2d_delta": 0.0117373603406113,
+          "max_track2d_delta": 0.031809957181664794
+        },
+        {
+          "point_id": 46,
+          "point_sources": [
+            "secondary"
+          ],
+          "camera_ids": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "image_names": [
+            "020.png",
+            "021.png",
+            "022.png",
+            "023.png",
+            "024.png",
+            "025.png"
+          ],
+          "total_observations": 6,
+          "kept_count": 5,
+          "removed_count": 1,
+          "removed_ratio": 0.16666666666666666,
+          "mean_error": 10.703904825255746,
+          "max_error": 48.06827013974451,
+          "mean_kept_error": 3.231031762357991,
+          "mean_removed_error": 48.06827013974451,
+          "max_removed_error": 48.06827013974451,
+          "mean_track2d_delta": 1.6962794304466449,
+          "max_track2d_delta": 2.5227669791432636
+        },
+        {
+          "point_id": 23,
+          "point_sources": [
+            "secondary"
+          ],
+          "camera_ids": [
+            "4",
+            "5",
+            "6"
+          ],
+          "image_names": [
+            "024.png",
+            "025.png",
+            "026.png"
+          ],
+          "total_observations": 3,
+          "kept_count": 3,
+          "removed_count": 0,
+          "removed_ratio": 0.0,
+          "mean_error": 3.8994644591087284,
+          "max_error": 6.0494323032005095,
+          "mean_kept_error": 3.8994644591087284,
+          "mean_removed_error": null,
+          "max_removed_error": null,
+          "mean_track2d_delta": 6.973244238968253,
+          "max_track2d_delta": 11.526255928397507
+        }
+      ]
+    },
+    "leave_one_out": {
+      "entries": [
+        {
+          "omitted_image_name": "020.png",
+          "omitted_camera_id": "0",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 33,
+            "reconstructed_points_3d_secondary": 3,
+            "reconstructed_points_3d_total": 36,
+            "mean_reprojection_error_px": 0.5580652356147766
+          },
+          "delta_primary_points_vs_full": 14,
+          "delta_secondary_points_vs_full": 1,
+          "delta_total_points_vs_full": 15,
+          "delta_mean_reprojection_error_px_vs_full": 0.387829452753067,
+          "full_scene_camera_metrics": {
+            "camera_id": "0",
+            "image_name": "020.png",
+            "count": 5,
+            "raw_count": 16,
+            "removed_count": 1,
+            "kept_ratio": 0.3125,
+            "removed_ratio": 0.0625,
+            "mean_error": 0.8062395755015241,
+            "p95_error": 3.1500148737346296,
+            "max_error": 3.9273887635280627
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "020.png",
+            "observation_count": 16,
+            "available_scene_points": 36,
+            "overlap_count": 13,
+            "overlap_ratio": 0.8125,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 0,
+            "overlap_point_ids": [
+              3,
+              4,
+              12,
+              5,
+              6,
+              9,
+              10,
+              11,
+              8,
+              33,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 8,
+            "inlier_ratio": 0.6153846153846154,
+            "mean_error": 32.736444990790204,
+            "median_error": 4.2683943616609135,
+            "p95_error": 179.508168614879,
+            "max_error": 206.20892728434458,
+            "front_ratio": 1.0,
+            "camera_center": [
+              -0.3519942138094698,
+              0.02858861942323727,
+              0.19293480503867289
+            ],
+            "max_error_point_id": 11,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.015145197704173614,
+            "rotation_delta_deg_vs_full": 2.6745409297865956
+          }
+        },
+        {
+          "omitted_image_name": "021.png",
+          "omitted_camera_id": "1",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 24,
+            "reconstructed_points_3d_secondary": 11,
+            "reconstructed_points_3d_total": 35,
+            "mean_reprojection_error_px": 0.42834705114364624
+          },
+          "delta_primary_points_vs_full": 5,
+          "delta_secondary_points_vs_full": 9,
+          "delta_total_points_vs_full": 14,
+          "delta_mean_reprojection_error_px_vs_full": 0.25811126828193665,
+          "full_scene_camera_metrics": {
+            "camera_id": "1",
+            "image_name": "021.png",
+            "count": 8,
+            "raw_count": 31,
+            "removed_count": 1,
+            "kept_ratio": 0.25806451612903225,
+            "removed_ratio": 0.03225806451612903,
+            "mean_error": 0.2856772211392132,
+            "p95_error": 1.390335101439095,
+            "max_error": 2.1134949172615913
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "021.png",
+            "observation_count": 31,
+            "available_scene_points": 35,
+            "overlap_count": 21,
+            "overlap_ratio": 0.6774193548387096,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 8,
+            "overlap_point_ids": [
+              1,
+              2,
+              12,
+              6,
+              11,
+              10,
+              8,
+              5,
+              7,
+              13,
+              14,
+              15,
+              16,
+              20,
+              19,
+              18,
+              41,
+              42,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 11,
+            "inlier_ratio": 0.5238095238095238,
+            "mean_error": 21.41183953303743,
+            "median_error": 6.5583344979637275,
+            "p95_error": 106.1019181041482,
+            "max_error": 115.35544837360574,
+            "front_ratio": 1.0,
+            "camera_center": [
+              -0.8626048978937114,
+              -0.5230185384685724,
+              0.5338492900674103
+            ],
+            "max_error_point_id": 11,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 1.0859837523739444,
+            "rotation_delta_deg_vs_full": 30.372895065831564
+          }
+        },
+        {
+          "omitted_image_name": "022.png",
+          "omitted_camera_id": "2",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 28,
+            "reconstructed_points_3d_secondary": 5,
+            "reconstructed_points_3d_total": 33,
+            "mean_reprojection_error_px": 0.47102731466293335
+          },
+          "delta_primary_points_vs_full": 9,
+          "delta_secondary_points_vs_full": 3,
+          "delta_total_points_vs_full": 12,
+          "delta_mean_reprojection_error_px_vs_full": 0.30079153180122375,
+          "full_scene_camera_metrics": {
+            "camera_id": "2",
+            "image_name": "022.png",
+            "count": 6,
+            "raw_count": 36,
+            "removed_count": 5,
+            "kept_ratio": 0.16666666666666666,
+            "removed_ratio": 0.1388888888888889,
+            "mean_error": 0.24707587713287574,
+            "p95_error": 0.9599089640857195,
+            "max_error": 1.2591639497096245
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "022.png",
+            "observation_count": 36,
+            "available_scene_points": 33,
+            "overlap_count": 24,
+            "overlap_ratio": 0.6666666666666666,
+            "primary_overlap_count": 22,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              0,
+              1,
+              2,
+              4,
+              12,
+              6,
+              9,
+              8,
+              11,
+              13,
+              14,
+              16,
+              15,
+              20,
+              19,
+              21,
+              22,
+              18,
+              5,
+              38,
+              39,
+              41,
+              42,
+              47
+            ],
+            "inlier_count": 10,
+            "inlier_ratio": 0.4166666666666667,
+            "mean_error": 32.689781570982525,
+            "median_error": 29.646145914371125,
+            "p95_error": 80.24793549268868,
+            "max_error": 89.83245008742674,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.21702498549566218,
+              0.07694553168502453,
+              -0.2231093938755551
+            ],
+            "max_error_point_id": 38,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.16974298148900407,
+            "rotation_delta_deg_vs_full": 9.127758736287156
+          }
+        },
+        {
+          "omitted_image_name": "023.png",
+          "omitted_camera_id": "3",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 35,
+            "reconstructed_points_3d_secondary": 3,
+            "reconstructed_points_3d_total": 38,
+            "mean_reprojection_error_px": 0.5027944445610046
+          },
+          "delta_primary_points_vs_full": 16,
+          "delta_secondary_points_vs_full": 1,
+          "delta_total_points_vs_full": 17,
+          "delta_mean_reprojection_error_px_vs_full": 0.33255866169929504,
+          "full_scene_camera_metrics": {
+            "camera_id": "3",
+            "image_name": "023.png",
+            "count": 4,
+            "raw_count": 34,
+            "removed_count": 7,
+            "kept_ratio": 0.11764705882352941,
+            "removed_ratio": 0.20588235294117646,
+            "mean_error": 1.592780754621621,
+            "p95_error": 5.414754411725879,
+            "max_error": 6.370223951993033
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "023.png",
+            "observation_count": 34,
+            "available_scene_points": 38,
+            "overlap_count": 28,
+            "overlap_ratio": 0.8235294117647058,
+            "primary_overlap_count": 26,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              1,
+              2,
+              3,
+              4,
+              12,
+              6,
+              9,
+              8,
+              7,
+              13,
+              16,
+              22,
+              21,
+              18,
+              15,
+              14,
+              17,
+              19,
+              5,
+              32,
+              35,
+              36,
+              39,
+              41,
+              42,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 14,
+            "inlier_ratio": 0.5,
+            "mean_error": 13.661657125210661,
+            "median_error": 5.953146657139753,
+            "p95_error": 34.705959101888205,
+            "max_error": 47.571862734076696,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.4271540355697944,
+              0.4885237900888397,
+              0.08908175204496457
+            ],
+            "max_error_point_id": 1,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.18411090651089737,
+            "rotation_delta_deg_vs_full": 10.392747884332133
+          }
+        },
+        {
+          "omitted_image_name": "024.png",
+          "omitted_camera_id": "4",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 5,
+            "reconstructed_points_3d": 17,
+            "reconstructed_points_3d_secondary": 3,
+            "reconstructed_points_3d_total": 20,
+            "mean_reprojection_error_px": 0.6341581344604492
+          },
+          "delta_primary_points_vs_full": -2,
+          "delta_secondary_points_vs_full": 1,
+          "delta_total_points_vs_full": -1,
+          "delta_mean_reprojection_error_px_vs_full": 0.4639223515987396,
+          "full_scene_camera_metrics": {
+            "camera_id": "4",
+            "image_name": "024.png",
+            "count": 10,
+            "raw_count": 36,
+            "removed_count": 4,
+            "kept_ratio": 0.2777777777777778,
+            "removed_ratio": 0.1111111111111111,
+            "mean_error": 0.5011336777854499,
+            "p95_error": 2.054680009704997,
+            "max_error": 2.484887229297646
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "024.png",
+            "observation_count": 36,
+            "available_scene_points": 20,
+            "overlap_count": 15,
+            "overlap_ratio": 0.4166666666666667,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              3,
+              4,
+              6,
+              9,
+              8,
+              7,
+              13,
+              16,
+              14,
+              15,
+              5,
+              32,
+              34,
+              42,
+              46
+            ],
+            "inlier_count": 12,
+            "inlier_ratio": 0.8,
+            "mean_error": 14.925848729130125,
+            "median_error": 3.4200518656924386,
+            "p95_error": 73.71537574151421,
+            "max_error": 125.37367266647315,
+            "front_ratio": 1.0,
+            "camera_center": [
+              1.3177528607075626,
+              -0.05365977942773535,
+              0.6919213958571142
+            ],
+            "max_error_point_id": 34,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.6155412061124386,
+            "rotation_delta_deg_vs_full": 31.11571621849575
+          }
+        },
+        {
+          "omitted_image_name": "025.png",
+          "omitted_camera_id": "5",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 5,
+            "reconstructed_points_3d": 7,
+            "reconstructed_points_3d_secondary": 8,
+            "reconstructed_points_3d_total": 15,
+            "mean_reprojection_error_px": 1.0796440839767456
+          },
+          "delta_primary_points_vs_full": -12,
+          "delta_secondary_points_vs_full": 6,
+          "delta_total_points_vs_full": -6,
+          "delta_mean_reprojection_error_px_vs_full": 0.909408301115036,
+          "full_scene_camera_metrics": {
+            "camera_id": "5",
+            "image_name": "025.png",
+            "count": 13,
+            "raw_count": 34,
+            "removed_count": 3,
+            "kept_ratio": 0.38235294117647056,
+            "removed_ratio": 0.08823529411764706,
+            "mean_error": 0.7813665707017612,
+            "p95_error": 2.914029627211269,
+            "max_error": 6.0494323032005095
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "025.png",
+            "observation_count": 34,
+            "available_scene_points": 15,
+            "overlap_count": 7,
+            "overlap_ratio": 0.20588235294117646,
+            "primary_overlap_count": 4,
+            "secondary_overlap_count": 3,
+            "overlap_point_ids": [
+              13,
+              7,
+              21,
+              22,
+              14,
+              39,
+              46
+            ],
+            "inlier_count": 6,
+            "inlier_ratio": 0.8571428571428571,
+            "mean_error": 5.293726808369442,
+            "median_error": 2.2799061475167712,
+            "p95_error": 16.305964742104976,
+            "max_error": 21.273210880171806,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.7974548278953342,
+              -0.07464495116143893,
+              1.918660921632686
+            ],
+            "max_error_point_id": 22,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.6342331526667011,
+            "rotation_delta_deg_vs_full": 26.69144196131067
+          }
+        },
+        {
+          "omitted_image_name": "026.png",
+          "omitted_camera_id": "6",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 10,
+            "reconstructed_points_3d_secondary": 10,
+            "reconstructed_points_3d_total": 20,
+            "mean_reprojection_error_px": 0.43848907947540283
+          },
+          "delta_primary_points_vs_full": -9,
+          "delta_secondary_points_vs_full": 8,
+          "delta_total_points_vs_full": -1,
+          "delta_mean_reprojection_error_px_vs_full": 0.26825329661369324,
+          "full_scene_camera_metrics": {
+            "camera_id": "6",
+            "image_name": "026.png",
+            "count": 11,
+            "raw_count": 16,
+            "removed_count": 0,
+            "kept_ratio": 0.6875,
+            "removed_ratio": 0.0,
+            "mean_error": 0.6232710125295537,
+            "p95_error": 2.35727803344024,
+            "max_error": 4.120089888367247
+          },
+          "backfit": {
+            "success": false,
+            "image_name": "026.png",
+            "observation_count": 16,
+            "available_scene_points": 20,
+            "overlap_count": 3,
+            "overlap_ratio": 0.1875,
+            "primary_overlap_count": 2,
+            "secondary_overlap_count": 1,
+            "overlap_point_ids": [
+              24,
+              23,
+              22
+            ],
+            "reason": "insufficient_overlap"
+          }
+        }
+      ],
+      "most_irreplaceable": [
+        {
+          "omitted_image_name": "025.png",
+          "omitted_camera_id": "5",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 5,
+            "reconstructed_points_3d": 7,
+            "reconstructed_points_3d_secondary": 8,
+            "reconstructed_points_3d_total": 15,
+            "mean_reprojection_error_px": 1.0796440839767456
+          },
+          "delta_primary_points_vs_full": -12,
+          "delta_secondary_points_vs_full": 6,
+          "delta_total_points_vs_full": -6,
+          "delta_mean_reprojection_error_px_vs_full": 0.909408301115036,
+          "full_scene_camera_metrics": {
+            "camera_id": "5",
+            "image_name": "025.png",
+            "count": 13,
+            "raw_count": 34,
+            "removed_count": 3,
+            "kept_ratio": 0.38235294117647056,
+            "removed_ratio": 0.08823529411764706,
+            "mean_error": 0.7813665707017612,
+            "p95_error": 2.914029627211269,
+            "max_error": 6.0494323032005095
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "025.png",
+            "observation_count": 34,
+            "available_scene_points": 15,
+            "overlap_count": 7,
+            "overlap_ratio": 0.20588235294117646,
+            "primary_overlap_count": 4,
+            "secondary_overlap_count": 3,
+            "overlap_point_ids": [
+              13,
+              7,
+              21,
+              22,
+              14,
+              39,
+              46
+            ],
+            "inlier_count": 6,
+            "inlier_ratio": 0.8571428571428571,
+            "mean_error": 5.293726808369442,
+            "median_error": 2.2799061475167712,
+            "p95_error": 16.305964742104976,
+            "max_error": 21.273210880171806,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.7974548278953342,
+              -0.07464495116143893,
+              1.918660921632686
+            ],
+            "max_error_point_id": 22,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.6342331526667011,
+            "rotation_delta_deg_vs_full": 26.69144196131067
+          }
+        },
+        {
+          "omitted_image_name": "026.png",
+          "omitted_camera_id": "6",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 10,
+            "reconstructed_points_3d_secondary": 10,
+            "reconstructed_points_3d_total": 20,
+            "mean_reprojection_error_px": 0.43848907947540283
+          },
+          "delta_primary_points_vs_full": -9,
+          "delta_secondary_points_vs_full": 8,
+          "delta_total_points_vs_full": -1,
+          "delta_mean_reprojection_error_px_vs_full": 0.26825329661369324,
+          "full_scene_camera_metrics": {
+            "camera_id": "6",
+            "image_name": "026.png",
+            "count": 11,
+            "raw_count": 16,
+            "removed_count": 0,
+            "kept_ratio": 0.6875,
+            "removed_ratio": 0.0,
+            "mean_error": 0.6232710125295537,
+            "p95_error": 2.35727803344024,
+            "max_error": 4.120089888367247
+          },
+          "backfit": {
+            "success": false,
+            "image_name": "026.png",
+            "observation_count": 16,
+            "available_scene_points": 20,
+            "overlap_count": 3,
+            "overlap_ratio": 0.1875,
+            "primary_overlap_count": 2,
+            "secondary_overlap_count": 1,
+            "overlap_point_ids": [
+              24,
+              23,
+              22
+            ],
+            "reason": "insufficient_overlap"
+          }
+        },
+        {
+          "omitted_image_name": "024.png",
+          "omitted_camera_id": "4",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 5,
+            "reconstructed_points_3d": 17,
+            "reconstructed_points_3d_secondary": 3,
+            "reconstructed_points_3d_total": 20,
+            "mean_reprojection_error_px": 0.6341581344604492
+          },
+          "delta_primary_points_vs_full": -2,
+          "delta_secondary_points_vs_full": 1,
+          "delta_total_points_vs_full": -1,
+          "delta_mean_reprojection_error_px_vs_full": 0.4639223515987396,
+          "full_scene_camera_metrics": {
+            "camera_id": "4",
+            "image_name": "024.png",
+            "count": 10,
+            "raw_count": 36,
+            "removed_count": 4,
+            "kept_ratio": 0.2777777777777778,
+            "removed_ratio": 0.1111111111111111,
+            "mean_error": 0.5011336777854499,
+            "p95_error": 2.054680009704997,
+            "max_error": 2.484887229297646
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "024.png",
+            "observation_count": 36,
+            "available_scene_points": 20,
+            "overlap_count": 15,
+            "overlap_ratio": 0.4166666666666667,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              3,
+              4,
+              6,
+              9,
+              8,
+              7,
+              13,
+              16,
+              14,
+              15,
+              5,
+              32,
+              34,
+              42,
+              46
+            ],
+            "inlier_count": 12,
+            "inlier_ratio": 0.8,
+            "mean_error": 14.925848729130125,
+            "median_error": 3.4200518656924386,
+            "p95_error": 73.71537574151421,
+            "max_error": 125.37367266647315,
+            "front_ratio": 1.0,
+            "camera_center": [
+              1.3177528607075626,
+              -0.05365977942773535,
+              0.6919213958571142
+            ],
+            "max_error_point_id": 34,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.6155412061124386,
+            "rotation_delta_deg_vs_full": 31.11571621849575
+          }
+        }
+      ],
+      "most_conflicting": [
+        {
+          "omitted_image_name": "021.png",
+          "omitted_camera_id": "1",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 24,
+            "reconstructed_points_3d_secondary": 11,
+            "reconstructed_points_3d_total": 35,
+            "mean_reprojection_error_px": 0.42834705114364624
+          },
+          "delta_primary_points_vs_full": 5,
+          "delta_secondary_points_vs_full": 9,
+          "delta_total_points_vs_full": 14,
+          "delta_mean_reprojection_error_px_vs_full": 0.25811126828193665,
+          "full_scene_camera_metrics": {
+            "camera_id": "1",
+            "image_name": "021.png",
+            "count": 8,
+            "raw_count": 31,
+            "removed_count": 1,
+            "kept_ratio": 0.25806451612903225,
+            "removed_ratio": 0.03225806451612903,
+            "mean_error": 0.2856772211392132,
+            "p95_error": 1.390335101439095,
+            "max_error": 2.1134949172615913
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "021.png",
+            "observation_count": 31,
+            "available_scene_points": 35,
+            "overlap_count": 21,
+            "overlap_ratio": 0.6774193548387096,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 8,
+            "overlap_point_ids": [
+              1,
+              2,
+              12,
+              6,
+              11,
+              10,
+              8,
+              5,
+              7,
+              13,
+              14,
+              15,
+              16,
+              20,
+              19,
+              18,
+              41,
+              42,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 11,
+            "inlier_ratio": 0.5238095238095238,
+            "mean_error": 21.41183953303743,
+            "median_error": 6.5583344979637275,
+            "p95_error": 106.1019181041482,
+            "max_error": 115.35544837360574,
+            "front_ratio": 1.0,
+            "camera_center": [
+              -0.8626048978937114,
+              -0.5230185384685724,
+              0.5338492900674103
+            ],
+            "max_error_point_id": 11,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 1.0859837523739444,
+            "rotation_delta_deg_vs_full": 30.372895065831564
+          }
+        },
+        {
+          "omitted_image_name": "026.png",
+          "omitted_camera_id": "6",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 10,
+            "reconstructed_points_3d_secondary": 10,
+            "reconstructed_points_3d_total": 20,
+            "mean_reprojection_error_px": 0.43848907947540283
+          },
+          "delta_primary_points_vs_full": -9,
+          "delta_secondary_points_vs_full": 8,
+          "delta_total_points_vs_full": -1,
+          "delta_mean_reprojection_error_px_vs_full": 0.26825329661369324,
+          "full_scene_camera_metrics": {
+            "camera_id": "6",
+            "image_name": "026.png",
+            "count": 11,
+            "raw_count": 16,
+            "removed_count": 0,
+            "kept_ratio": 0.6875,
+            "removed_ratio": 0.0,
+            "mean_error": 0.6232710125295537,
+            "p95_error": 2.35727803344024,
+            "max_error": 4.120089888367247
+          },
+          "backfit": {
+            "success": false,
+            "image_name": "026.png",
+            "observation_count": 16,
+            "available_scene_points": 20,
+            "overlap_count": 3,
+            "overlap_ratio": 0.1875,
+            "primary_overlap_count": 2,
+            "secondary_overlap_count": 1,
+            "overlap_point_ids": [
+              24,
+              23,
+              22
+            ],
+            "reason": "insufficient_overlap"
+          }
+        },
+        {
+          "omitted_image_name": "022.png",
+          "omitted_camera_id": "2",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 28,
+            "reconstructed_points_3d_secondary": 5,
+            "reconstructed_points_3d_total": 33,
+            "mean_reprojection_error_px": 0.47102731466293335
+          },
+          "delta_primary_points_vs_full": 9,
+          "delta_secondary_points_vs_full": 3,
+          "delta_total_points_vs_full": 12,
+          "delta_mean_reprojection_error_px_vs_full": 0.30079153180122375,
+          "full_scene_camera_metrics": {
+            "camera_id": "2",
+            "image_name": "022.png",
+            "count": 6,
+            "raw_count": 36,
+            "removed_count": 5,
+            "kept_ratio": 0.16666666666666666,
+            "removed_ratio": 0.1388888888888889,
+            "mean_error": 0.24707587713287574,
+            "p95_error": 0.9599089640857195,
+            "max_error": 1.2591639497096245
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "022.png",
+            "observation_count": 36,
+            "available_scene_points": 33,
+            "overlap_count": 24,
+            "overlap_ratio": 0.6666666666666666,
+            "primary_overlap_count": 22,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              0,
+              1,
+              2,
+              4,
+              12,
+              6,
+              9,
+              8,
+              11,
+              13,
+              14,
+              16,
+              15,
+              20,
+              19,
+              21,
+              22,
+              18,
+              5,
+              38,
+              39,
+              41,
+              42,
+              47
+            ],
+            "inlier_count": 10,
+            "inlier_ratio": 0.4166666666666667,
+            "mean_error": 32.689781570982525,
+            "median_error": 29.646145914371125,
+            "p95_error": 80.24793549268868,
+            "max_error": 89.83245008742674,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.21702498549566218,
+              0.07694553168502453,
+              -0.2231093938755551
+            ],
+            "max_error_point_id": 38,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.16974298148900407,
+            "rotation_delta_deg_vs_full": 9.127758736287156
+          }
+        }
+      ],
+      "hardest_to_backfit": [
+        {
+          "omitted_image_name": "020.png",
+          "omitted_camera_id": "0",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "021.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 33,
+            "reconstructed_points_3d_secondary": 3,
+            "reconstructed_points_3d_total": 36,
+            "mean_reprojection_error_px": 0.5580652356147766
+          },
+          "delta_primary_points_vs_full": 14,
+          "delta_secondary_points_vs_full": 1,
+          "delta_total_points_vs_full": 15,
+          "delta_mean_reprojection_error_px_vs_full": 0.387829452753067,
+          "full_scene_camera_metrics": {
+            "camera_id": "0",
+            "image_name": "020.png",
+            "count": 5,
+            "raw_count": 16,
+            "removed_count": 1,
+            "kept_ratio": 0.3125,
+            "removed_ratio": 0.0625,
+            "mean_error": 0.8062395755015241,
+            "p95_error": 3.1500148737346296,
+            "max_error": 3.9273887635280627
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "020.png",
+            "observation_count": 16,
+            "available_scene_points": 36,
+            "overlap_count": 13,
+            "overlap_ratio": 0.8125,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 0,
+            "overlap_point_ids": [
+              3,
+              4,
+              12,
+              5,
+              6,
+              9,
+              10,
+              11,
+              8,
+              33,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 8,
+            "inlier_ratio": 0.6153846153846154,
+            "mean_error": 32.736444990790204,
+            "median_error": 4.2683943616609135,
+            "p95_error": 179.508168614879,
+            "max_error": 206.20892728434458,
+            "front_ratio": 1.0,
+            "camera_center": [
+              -0.3519942138094698,
+              0.02858861942323727,
+              0.19293480503867289
+            ],
+            "max_error_point_id": 11,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.015145197704173614,
+            "rotation_delta_deg_vs_full": 2.6745409297865956
+          }
+        },
+        {
+          "omitted_image_name": "022.png",
+          "omitted_camera_id": "2",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "021.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 28,
+            "reconstructed_points_3d_secondary": 5,
+            "reconstructed_points_3d_total": 33,
+            "mean_reprojection_error_px": 0.47102731466293335
+          },
+          "delta_primary_points_vs_full": 9,
+          "delta_secondary_points_vs_full": 3,
+          "delta_total_points_vs_full": 12,
+          "delta_mean_reprojection_error_px_vs_full": 0.30079153180122375,
+          "full_scene_camera_metrics": {
+            "camera_id": "2",
+            "image_name": "022.png",
+            "count": 6,
+            "raw_count": 36,
+            "removed_count": 5,
+            "kept_ratio": 0.16666666666666666,
+            "removed_ratio": 0.1388888888888889,
+            "mean_error": 0.24707587713287574,
+            "p95_error": 0.9599089640857195,
+            "max_error": 1.2591639497096245
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "022.png",
+            "observation_count": 36,
+            "available_scene_points": 33,
+            "overlap_count": 24,
+            "overlap_ratio": 0.6666666666666666,
+            "primary_overlap_count": 22,
+            "secondary_overlap_count": 2,
+            "overlap_point_ids": [
+              0,
+              1,
+              2,
+              4,
+              12,
+              6,
+              9,
+              8,
+              11,
+              13,
+              14,
+              16,
+              15,
+              20,
+              19,
+              21,
+              22,
+              18,
+              5,
+              38,
+              39,
+              41,
+              42,
+              47
+            ],
+            "inlier_count": 10,
+            "inlier_ratio": 0.4166666666666667,
+            "mean_error": 32.689781570982525,
+            "median_error": 29.646145914371125,
+            "p95_error": 80.24793549268868,
+            "max_error": 89.83245008742674,
+            "front_ratio": 1.0,
+            "camera_center": [
+              0.21702498549566218,
+              0.07694553168502453,
+              -0.2231093938755551
+            ],
+            "max_error_point_id": 38,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 0.16974298148900407,
+            "rotation_delta_deg_vs_full": 9.127758736287156
+          }
+        },
+        {
+          "omitted_image_name": "021.png",
+          "omitted_camera_id": "1",
+          "success": true,
+          "subset_scene": {
+            "selected_images": [
+              "020.png",
+              "022.png",
+              "023.png",
+              "024.png",
+              "025.png",
+              "026.png"
+            ],
+            "reconstructed_camera_count": 6,
+            "reconstructed_points_3d": 24,
+            "reconstructed_points_3d_secondary": 11,
+            "reconstructed_points_3d_total": 35,
+            "mean_reprojection_error_px": 0.42834705114364624
+          },
+          "delta_primary_points_vs_full": 5,
+          "delta_secondary_points_vs_full": 9,
+          "delta_total_points_vs_full": 14,
+          "delta_mean_reprojection_error_px_vs_full": 0.25811126828193665,
+          "full_scene_camera_metrics": {
+            "camera_id": "1",
+            "image_name": "021.png",
+            "count": 8,
+            "raw_count": 31,
+            "removed_count": 1,
+            "kept_ratio": 0.25806451612903225,
+            "removed_ratio": 0.03225806451612903,
+            "mean_error": 0.2856772211392132,
+            "p95_error": 1.390335101439095,
+            "max_error": 2.1134949172615913
+          },
+          "backfit": {
+            "success": true,
+            "image_name": "021.png",
+            "observation_count": 31,
+            "available_scene_points": 35,
+            "overlap_count": 21,
+            "overlap_ratio": 0.6774193548387096,
+            "primary_overlap_count": 13,
+            "secondary_overlap_count": 8,
+            "overlap_point_ids": [
+              1,
+              2,
+              12,
+              6,
+              11,
+              10,
+              8,
+              5,
+              7,
+              13,
+              14,
+              15,
+              16,
+              20,
+              19,
+              18,
+              41,
+              42,
+              45,
+              46,
+              47
+            ],
+            "inlier_count": 11,
+            "inlier_ratio": 0.5238095238095238,
+            "mean_error": 21.41183953303743,
+            "median_error": 6.5583344979637275,
+            "p95_error": 106.1019181041482,
+            "max_error": 115.35544837360574,
+            "front_ratio": 1.0,
+            "camera_center": [
+              -0.8626048978937114,
+              -0.5230185384685724,
+              0.5338492900674103
+            ],
+            "max_error_point_id": 11,
+            "intrinsics_source": "reference_full_camera",
+            "center_shift_vs_full": 1.0859837523739444,
+            "rotation_delta_deg_vs_full": 30.372895065831564
+          }
+        }
+      ]
+    }
+  }
+}
