@@ -4871,6 +4871,7 @@ def add_camera_to_reconstruction(calib_data, camera_id, min_points=4, ransac_thr
                     'used_scale_anchors': int(len(reconstructed_shared)) >= 2,
                     'scale_anchor_count': int(len(reconstructed_shared)),
                     'weak_scale_anchors': int(len(reconstructed_shared)) < 2,
+                    'pairwise_mean_error': float(stats.get('mean', 999.0)),
                 }
 
             return None
@@ -5578,6 +5579,23 @@ def add_camera_to_reconstruction(calib_data, camera_id, min_points=4, ransac_thr
             weak_scale_support = _count_new_point_anchor_support(new_points.keys(), min_points_per_anchor=2)
             min_new_points_for_weak_scale = max(4, min_points)
             min_support_anchors = 2
+            # Relax to 1 anchor when pairwise quality is high
+            if fallback_result is not None:
+                _pw_inlier_ratio = fallback_result.get('inlier_count', 0) / max(fallback_result.get('shared_count', 1), 1)
+                _pw_mean = fallback_result.get('pairwise_mean_error', 999.0)
+                if (
+                    _pw_inlier_ratio >= 0.8
+                    and _pw_mean < 1.0
+                    and fallback_result.get('inlier_count', 0) >= 6
+                    and len(new_points) >= min_new_points_for_weak_scale
+                    and len(weak_scale_support) >= 1
+                ):
+                    min_support_anchors = 1
+                    print(
+                        f"Камера {camera_id}: weak-scale guard ослаблен до {min_support_anchors} "
+                        f"(inlier_ratio={_pw_inlier_ratio:.2f}, mean={_pw_mean:.2f}px, "
+                        f"new_points={len(new_points)}, support={len(weak_scale_support)})"
+                    )
             if (
                 len(new_points) < min_new_points_for_weak_scale or
                 len(weak_scale_support) < min_support_anchors
