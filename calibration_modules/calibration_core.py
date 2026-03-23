@@ -3840,6 +3840,30 @@ def _finalize_reconstruction(
         except Exception as e:
             print(f"Переоценка поз камер после cleanup пропущена: {str(e)}")
 
+        # --- Восстановление наблюдений после уточнения поз ---
+        try:
+            _report_progress(89.395, "Восстановление наблюдений после уточнения поз...")
+            recovered_observations = recover_observations_after_pose_refinement(
+                calib_data,
+                max_cameras=4,
+                max_recoveries_per_camera=6,
+            )
+            if recovered_observations > 0:
+                refine_reconstruction(
+                    calib_data,
+                    max_iterations=1,
+                    focal_range=focal_range,
+                    force_same_focal=force_same_focal,
+                    optimize_intrinsics=False,
+                    optimize_distortion=False,
+                    progress_callback=progress_callback,
+                    progress_range=(89.396, 89.399),
+                )
+            _capture_point_drift_stage(calib_data, "after_observation_recovery",
+                {"recovered_observations": int(recovered_observations)})
+        except Exception as e:
+            print(f"Восстановление наблюдений пропущено: {str(e)}")
+
         # --- Fix 2: Повторное уточнение камер по отклонённым трекам ---
         try:
             _report_progress(89.40, "Повторное уточнение камер по отклонённым трекам...")
@@ -8634,6 +8658,157 @@ def refine_high_error_camera_poses(
         print("Локальное уточнение поз камер: изменений не потребовалось")
 
     return refined_total
+
+
+def recover_observations_after_pose_refinement(
+    calib_data,
+    max_cameras=4,
+    max_recoveries_per_camera=6,
+):
+    """
+    Восстанавливает удалённые наблюдения после уточнения позы камеры.
+    
+    После precision cleanup удаляются наблюдения с высокой ошибкой репроекции.
+    Корневая причина часто — неточная поза камеры. После refine_high_error_camera_poses
+    некоторые удалённые наблюдения можно вернуть, используя raw_camera_points.
+    
+    Args:
+        calib_data: Данные калибровки
+        max_cameras: Максимум камер для обработки
+        max_recoveries_per_camera: Максимум восстановленных наблюдений на камеру
+        
+    Returns:
+        Количество восстановленных наблюдений
+    """
+    if not calib_data.get('cameras') or not calib_data.get('points_3d'):
+        return 0
+    
+    # Шаг 1: Найти камеры с потерянными наблюдениями
+    raw_camera_points = calib_data.get('raw_camera_points', {})
+    camera_points = calib_data.get('camera_points', {})
+    points_3d = calib_data.get('points_3d', {})
+    
+    if not raw_camera_points:
+        return 0
+    
+    # Определить потерянные наблюдения для каждой камеры
+    camera_candidates = []
+    for camera_id in raw_camera_points.keys():
+        camera_id_str = str(camera_id)
+        raw_points = raw_camera_points.get(camera_id_str, {})
+        existing_points = camera_points.get(camera_id_str, {})
+        
+        # Найти потерянные точки, которые существуют в points_3d
+        lost_point_ids = []
+        for point_id in raw_points.keys():
+            if point_id not in existing_points and point_id in points_3d:
+                lost_point_ids.append(point_id)
+        
+        if lost_point_ids:
+            camera_candidates.append((len(lost_point_ids), camera_id_str, lost_point_ids))
+    
+    if not camera_candidates:
+        return 0
+    
+    # Сортировка: камеры с наибольшим кол-вом recoverable наблюдений первыми
+    camera_candidates.sort(reverse=True)
+    
+    # Получить целевые пороги
+    target_mean = float(calib_data.get('precision_target_mean_px', 0.5))
+    target_p95 = float(calib_data.get('precision_target_p95_px', 1.0))
+    target_max = float(calib_data.get('precision_target_max_px', 1.5))
+    
+    # Gate 1: Индивидуальный порог (строже чем cleanup threshold)
+    individual_threshold = min(target_max * 0.85, target_p95)
+    
+    total_recovered = 0
+    print("Восстановление наблюдений после уточнения поз:")
+    
+    # При необходимости — получить глобальную статистику до изменений
+    before_global_error, _, _ = calculate_reprojection_errors(calib_data)
+    before_global_dist = summarize_reprojection_error_distribution(calib_data, top_k=0)
+    
+    for _, camera_id_str, lost_point_ids in camera_candidates[:max_cameras]:
+        if camera_id_str not in calib_data['cameras']:
+            continue
+        
+        # Шаг 2: Оценить каждое удалённое наблюдение с текущей позой
+        R, t = calib_data['cameras'][camera_id_str]
+        camera_K = _get_camera_matrix(calib_data, camera_id_str)
+        
+        recovery_candidates = []
+        for point_id in lost_point_ids:
+            raw_2d = np.asarray(raw_camera_points[camera_id_str][point_id], dtype=np.float64).reshape(2)
+            point_3d = np.asarray(points_3d[point_id], dtype=np.float64).reshape(1, 3)
+            
+            # Проецировать 3D-точку через текущую позу камеры
+            rvec, _ = cv2.Rodrigues(np.asarray(R, dtype=np.float64).reshape(3, 3))
+            projected, _ = cv2.projectPoints(
+                point_3d,
+                rvec,
+                np.asarray(t, dtype=np.float64).reshape(3, 1),
+                np.asarray(camera_K, dtype=np.float64),
+                None if calib_data.get('dist_coeffs') is None else np.asarray(calib_data.get('dist_coeffs'), dtype=np.float64).reshape(-1, 1),
+            )
+            reprojection_error = float(np.linalg.norm(projected.reshape(2) - raw_2d))
+            
+            # Gate 1: Индивидуальный порог
+            if reprojection_error <= individual_threshold:
+                recovery_candidates.append((reprojection_error, point_id))
+        
+        if not recovery_candidates:
+            continue
+        
+        # Шаг 3: Сортировка кандидатов по ошибке (лучшие первые)
+        recovery_candidates.sort()
+        
+        camera_recovered = 0
+        for reprojection_error, point_id in recovery_candidates[:max_recoveries_per_camera]:
+            # Запомнить состояние до добавления
+            before_mean = before_global_error
+            before_stats = before_global_dist
+            
+            # Добавить наблюдение обратно в camera_points
+            raw_2d = np.asarray(raw_camera_points[camera_id_str][point_id], dtype=np.float64).reshape(2)
+            camera_points.setdefault(camera_id_str, {})[point_id] = raw_2d
+            
+            # Вычислить статистику после добавления
+            after_mean, _, _ = calculate_reprojection_errors(calib_data)
+            after_stats = summarize_reprojection_error_distribution(calib_data, top_k=0)
+            
+            # Gate 2: Глобальная проверка
+            scene_ok = (
+                after_mean <= max(before_mean + 0.03, target_mean * 1.15) and
+                after_stats['p95'] <= max(before_stats['p95'] + 0.08, target_p95 * 1.10) and
+                after_stats['max'] <= max(before_stats['max'] + 0.15, target_max * 1.25)
+            )
+            
+            if not scene_ok:
+                # Откатить добавление
+                del camera_points[camera_id_str][point_id]
+                continue
+            
+            # Установить confidence=0.70
+            _set_observation_confidence(calib_data, camera_id_str, point_id, 0.70)
+            camera_recovered += 1
+            total_recovered += 1
+            
+            # Обновить индекс before для следующей итерации
+            before_global_error = after_mean
+            before_global_dist = after_stats
+        
+        if camera_recovered > 0:
+            print(
+                f"  - Камера {camera_id_str}: "
+                f"+{camera_recovered} наблюдения "
+                f"(из {len(lost_point_ids)} удалённых), "
+                f"mean {before_mean:.4f}px -> {after_mean:.4f}px"
+            )
+    
+    if total_recovered <= 0:
+        print("Восстановление наблюдений: кандидатов не найдено")
+    
+    return total_recovered
 
 
 def _refine_cameras_from_pseudo_track_entries(
