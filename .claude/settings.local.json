@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(find D:\\\\Script\\\\IM_v2\\\\calibration_modules:*)",
-      "Bash(.venv/Scripts/python.exe:*)",
-      "Bash(python:*)"
-    ]
-  }
-}
