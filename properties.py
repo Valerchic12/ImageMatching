@@ -551,6 +551,90 @@ class CAMCALIB_props(bpy.types.PropertyGroup):
         max=10.0
     )
 
+    # ===== Параметры калибровки (persistent) =====
+    quality_profile: EnumProperty(
+        name="Режим калибровки",
+        description="Готовый режим калибровки: Быстро/Баланс/Точно/Свои настройки",
+        items=[
+            ('FAST', "Быстро", "Быстрее работает, но обычно оставляет меньше точек"),
+            ('BALANCED', "Баланс", "Рекомендуемый режим для большинства сцен"),
+            ('PRECISE', "Точно", "Строже к ошибкам, медленнее, обычно дает более чистый результат"),
+            ('CUSTOM', "Свои настройки", "Ручная настройка всех параметров"),
+        ],
+        default='BALANCED'
+    )
+
+    min_points_for_camera: IntProperty(
+        name="Мин. точек для камеры",
+        description="Минимальное количество точек, необходимое для добавления камеры",
+        default=4,
+        min=3,
+        max=20
+    )
+
+    bundle_method: EnumProperty(
+        name="Метод оптимизации",
+        description="Метод оптимизации для пакетной корректировки",
+        items=[
+            ('trf', "Trust Region Reflective", "Надежный метод Trust Region Reflective"),
+            ('dogbox', "Dogbox", "Метод Dogbox для сложных случаев"),
+            ('lm', "Levenberg-Marquardt", "Классический LM алгоритм"),
+        ],
+        default='trf'
+    )
+
+    bundle_ftol: FloatProperty(
+        name="Точность оптимизации",
+        description="Относительная ошибка в целевой функции для остановки оптимизации",
+        default=1e-8,
+        min=1e-12,
+        max=1e-4,
+        precision=12
+    )
+
+    max_bundle_iterations: IntProperty(
+        name="Макс. итераций оптимизации",
+        description="Максимальное количество итераций пакетной корректировки",
+        default=3,
+        min=1,
+        max=10
+    )
+
+    ransac_threshold: FloatProperty(
+        name="Порог RANSAC",
+        description="Пороговое расстояние в пикселях для определения выбросов",
+        default=8.0,
+        min=1.0,
+        max=20.0,
+        precision=1
+    )
+
+    confidence: FloatProperty(
+        name="Уровень доверия RANSAC",
+        description="Уровень доверия для RANSAC алгоритма",
+        default=0.99,
+        min=0.8,
+        max=0.999,
+        precision=3
+    )
+
+    max_attempts: IntProperty(
+        name="Макс. попыток добавить камеру",
+        description="Максимальное количество попыток добавить камеру в сцену",
+        default=3,
+        min=1,
+        max=10
+    )
+
+    max_reprojection_error: FloatProperty(
+        name="Макс. ошибка репроекции",
+        description="Максимально допустимая ошибка репроекции в пикселях",
+        default=10.0,
+        min=1.0,
+        max=50.0,
+        precision=1
+    )
+
     def on_active_group_changed(self, context):
         """Обработчик изменения активной группы точек"""
         # Вызываем оператор выбора точки, если мы не в процессе загрузки/инициализации

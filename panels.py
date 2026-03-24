@@ -281,6 +281,19 @@ class CAMCALIB_PT_main_panel(Panel):
                 warning.alert = True
                 warning.label(text="Нужны группы точек для запуска", icon='ERROR')
 
+        # Показываем текущий режим калибровки перед кнопкой
+        mode_row = calibration_box.row()
+        mode_label = "Режим: "
+        if props.quality_profile == 'FAST':
+            mode_label += "Быстро"
+        elif props.quality_profile == 'PRECISE':
+            mode_label += "Точно"
+        elif props.quality_profile == 'CUSTOM':
+            mode_label += "Свои настройки"
+        else:  # BALANCED
+            mode_label += "Баланс"
+        mode_row.label(text=mode_label, icon='SETTINGS')
+
         run_row = calibration_box.row()
         run_row.scale_y = 1.4
         run_row.enabled = not props.calibration_in_progress

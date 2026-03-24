@@ -56,6 +56,63 @@ def _get_images_with_grouped_points(props):
         if _count_grouped_points_on_image(image_item) > 0
     ]
 
+
+def _resolve_calibration_settings(context):
+    """Получить разрешённые параметры калибровки из сцены.
+    
+    Читает текущие параметры из scene.camera_calibration и возвращает
+    разрешённые значения на основе выбранного режима (preset или custom).
+    Используется обоими операторами калибровки для единообразного применения параметров.
+    """
+    props = context.scene.camera_calibration
+    
+    if props.quality_profile == 'CUSTOM':
+        return {
+            "min_points_for_camera": props.min_points_for_camera,
+            "bundle_method": props.bundle_method,
+            "bundle_ftol": props.bundle_ftol,
+            "max_bundle_iterations": props.max_bundle_iterations,
+            "ransac_threshold": props.ransac_threshold,
+            "confidence": props.confidence,
+            "max_attempts": props.max_attempts,
+            "max_reprojection_error": props.max_reprojection_error,
+        }
+
+    presets = {
+        'FAST': {
+            "min_points_for_camera": 4,
+            "bundle_method": 'trf',
+            "bundle_ftol": 1e-6,
+            "max_bundle_iterations": 2,
+            "ransac_threshold": 10.0,
+            "confidence": 0.98,
+            "max_attempts": 2,
+            "max_reprojection_error": 12.0,
+        },
+        'BALANCED': {
+            "min_points_for_camera": 4,
+            "bundle_method": 'trf',
+            "bundle_ftol": 1e-8,
+            "max_bundle_iterations": 3,
+            "ransac_threshold": 8.0,
+            "confidence": 0.99,
+            "max_attempts": 3,
+            "max_reprojection_error": 10.0,
+        },
+        'PRECISE': {
+            "min_points_for_camera": 5,
+            "bundle_method": 'trf',
+            "bundle_ftol": 1e-9,
+            "max_bundle_iterations": 4,
+            "ransac_threshold": 6.0,
+            "confidence": 0.995,
+            "max_attempts": 4,
+            "max_reprojection_error": 6.0,
+        },
+    }
+    return presets[props.quality_profile]
+
+
 class CAMCALIB_OT_load_image(Operator):
     """Загрузить изображения для калибровки"""
     bl_idname = "camera_calibration.load_image"
@@ -497,6 +554,18 @@ class CAMCALIB_OT_run_advanced_calibration(Operator):
         props = context.scene.camera_calibration
         wm = context.window_manager
 
+        # Синхронизируем operator properties с scene properties
+        # Это гарантирует, что при следующем вызове простой кнопки будут использованы текущие параметры
+        props.quality_profile = self.quality_profile
+        props.min_points_for_camera = self.min_points_for_camera
+        props.bundle_method = self.bundle_method
+        props.bundle_ftol = self.bundle_ftol
+        props.max_bundle_iterations = self.max_bundle_iterations
+        props.ransac_threshold = self.ransac_threshold
+        props.confidence = self.confidence
+        props.max_attempts = self.max_attempts
+        props.max_reprojection_error = self.max_reprojection_error
+
         def update_progress(progress_value, status_text):
             progress_value = float(max(0.0, min(100.0, progress_value)))
             if progress_value + 1e-6 < float(props.calibration_progress):
@@ -584,6 +653,19 @@ class CAMCALIB_OT_run_advanced_calibration(Operator):
                 pass
     
     def invoke(self, context, event):
+        # Загружаем текущие параметры из scene в operator properties
+        # чтобы диалог показывал последние выбранные значения
+        props = context.scene.camera_calibration
+        self.quality_profile = props.quality_profile
+        self.min_points_for_camera = props.min_points_for_camera
+        self.bundle_method = props.bundle_method
+        self.bundle_ftol = props.bundle_ftol
+        self.max_bundle_iterations = props.max_bundle_iterations
+        self.ransac_threshold = props.ransac_threshold
+        self.confidence = props.confidence
+        self.max_attempts = props.max_attempts
+        self.max_reprojection_error = props.max_reprojection_error
+        
         return context.window_manager.invoke_props_dialog(self, width=460)
     
     def draw(self, context):
@@ -1025,19 +1107,23 @@ class CAMCALIB_OT_calibrate(Operator):
         wm.progress_begin(0, 100)
 
         try:
-            # Запускаем быструю калибровку с оптимальными параметрами
+            # Получаем параметры калибровки из текущего выбора в сцене
             self.report({'INFO'}, "Запуск калибровки...")
             update_progress(2.0, "Запуск калибровки...")
+            
+            # Используем helper-функцию для получения разрешённых параметров
+            resolved_settings = _resolve_calibration_settings(context)
+            
             result = calibration_bridge.run_calibration_from_addon(
                 props,
-                min_points_for_camera=6,
-                bundle_method='trf',
-                bundle_ftol=1e-8,
-                max_bundle_iterations=5,
-                ransac_threshold=8.0,
-                confidence=0.99,
-                max_attempts=3,
-                max_reprojection_error=10.0,
+                min_points_for_camera=resolved_settings["min_points_for_camera"],
+                bundle_method=resolved_settings["bundle_method"],
+                bundle_ftol=resolved_settings["bundle_ftol"],
+                max_bundle_iterations=resolved_settings["max_bundle_iterations"],
+                ransac_threshold=resolved_settings["ransac_threshold"],
+                confidence=resolved_settings["confidence"],
+                max_attempts=resolved_settings["max_attempts"],
+                max_reprojection_error=resolved_settings["max_reprojection_error"],
                 create_cameras=True,
                 progress_callback=update_progress
             )
